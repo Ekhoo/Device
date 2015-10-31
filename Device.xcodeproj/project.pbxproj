@@ -13,6 +13,9 @@
 		BE11EF051BE3FD9200816835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF001BE3FD9200816835 /* ViewController.swift */; };
 		BE11EF0A1BE3FE9500816835 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE11EF061BE3FE9500816835 /* LaunchScreen.storyboard */; };
 		BE11EF0B1BE3FE9500816835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE11EF081BE3FE9500816835 /* Main.storyboard */; };
+		BE11EF0E1BE4000700816835 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0D1BE4000700816835 /* Device.swift */; };
+		BE11EF101BE4001A00816835 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0F1BE4001A00816835 /* Version.swift */; };
+		BE11EF121BE4002800816835 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF111BE4002800816835 /* Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		BE11EF001BE3FD9200816835 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Example/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		BE11EF071BE3FE9500816835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		BE11EF091BE3FE9500816835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		BE11EF0D1BE4000700816835 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = SOURCE_ROOT; };
+		BE11EF0F1BE4001A00816835 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Version.swift; path = Source/Version.swift; sourceTree = SOURCE_ROOT; };
+		BE11EF111BE4002800816835 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Source/Size.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 		BE11EEE91BE3FC0300816835 /* Device */ = {
 			isa = PBXGroup;
 			children = (
+				BE11EF0C1BE3FFEB00816835 /* Source */,
 				BE11EF061BE3FE9500816835 /* LaunchScreen.storyboard */,
 				BE11EF081BE3FE9500816835 /* Main.storyboard */,
 				BE11EEFC1BE3FD9200816835 /* AppDelegate.swift */,
@@ -63,6 +70,16 @@
 				BE11EF001BE3FD9200816835 /* ViewController.swift */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		BE11EF0C1BE3FFEB00816835 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BE11EF0D1BE4000700816835 /* Device.swift */,
+				BE11EF0F1BE4001A00816835 /* Version.swift */,
+				BE11EF111BE4002800816835 /* Size.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE11EF0E1BE4000700816835 /* Device.swift in Sources */,
+				BE11EF121BE4002800816835 /* Size.swift in Sources */,
 				BE11EF051BE3FD9200816835 /* ViewController.swift in Sources */,
+				BE11EF101BE4001A00816835 /* Version.swift in Sources */,
 				BE11EF011BE3FD9200816835 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
