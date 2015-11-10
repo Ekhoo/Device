@@ -18,7 +18,7 @@ Device is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Device", '~> 0.0.1'
+pod "Device", '~> 0.0.2'
 ```
 
 # Usage
@@ -36,7 +36,7 @@ func myFunc() {
             case .iPhone6:       print("It's an iPhone 6")
             case .iPhone6S:      print("It's an iPhone 6S")
             case .iPhone6Plus:   print("It's an iPhone 6 Plus")
-            case .iPhone6PlusS:  print("It's an iPhone 6 Plus S")
+            case .iPhone6SPlus:  print("It's an iPhone 6 S Plus")
             
             /*** iPad ***/
             case .iPad1:         print("It's an iPad 1")
