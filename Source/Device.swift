@@ -20,7 +20,7 @@ public class Device {
             case "iPhone7,2":                                return Version.iPhone6
             case "iPhone7,1":                                return Version.iPhone6Plus
             case "iPhone8,1":                                return Version.iPhone6S
-            case "iPhone8,2":                                return Version.iPhone6PlusS
+            case "iPhone8,2":                                return Version.iPhone6SPlus
             
             /*** iPad ***/
             case "iPad1,1":                                  return Version.iPad1
