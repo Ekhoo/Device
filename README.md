@@ -70,7 +70,7 @@ func myFunc() {
 
 ## Device screen size
 ```swift
-func myFucn() {
+func myFunc() {
         /*** Display the device screen size ***/
         switch Device.size() {
             case .Screen3_5Inch: print("It's a 3.5 inch screen")
