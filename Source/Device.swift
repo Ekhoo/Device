@@ -68,7 +68,7 @@ public class Device {
             case 480:
                 return Size.Screen3_5Inch
             case 568:
-                return Size.Screen3_5Inch
+                return Size.Screen4Inch
             case 667:
                 return UIScreen.mainScreen().scale == 3.0 ? Size.Screen5_5Inch : Size.Screen4_7Inch
             case 736:
