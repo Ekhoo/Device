@@ -82,6 +82,24 @@ func myFunc() {
 }
 ```
 
+## Helpers
+```swift
+func myFunc() {
+        /*** Helpers ***/
+        if Device.isEqualToScreenSize(Size.Screen4Inch) {
+            print("It's a 5.5 inch screen")
+        }
+        
+        if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
+            print("Your device screen is larger than 4.7 inch")
+        }
+        
+        if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
+            print("Your device screen is smaller than 4.7 inch")
+        }
+}
+```
+
 # Author
 Lucas Ortis:
 - me@lucas-ortis.com
