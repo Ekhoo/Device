@@ -62,6 +62,19 @@ class ViewController: UIViewController {
             case .Screen5_5Inch: print("It's a 5.5 inch screen")
             default:             print("Unknown size")
         }
+        
+        /*** Helpers ***/
+        if Device.isEqualToScreenSize(Size.Screen4Inch) {
+            print("It's a 5.5 inch screen")
+        }
+        
+        if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
+            print("Your device screen is larger than 4.7 inch")
+        }
+        
+        if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
+            print("Your device screen is smaller than 4.7 inch")
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -77,4 +77,16 @@ public class Device {
                 return Size.UnknownSize
         }
     }
+    
+    static public func isEqualToScreenSize(size: Size) -> Bool {
+        return size == Device.size() ? true : false;
+    }
+    
+    static public func isLargerThanScreenSize(size: Size) -> Bool {
+        return size.rawValue < Device.size().rawValue ? true : false;
+    }
+    
+    static public func isSmallerThanScreenSize(size: Size) -> Bool {
+        return size.rawValue > Device.size().rawValue ? true : false;
+    }
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public enum Size {
-    case UnknownSize
+public enum Size: Int {
+    case UnknownSize = 0
     case Screen3_5Inch
     case Screen4Inch
     case Screen4_7Inch
