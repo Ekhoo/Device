@@ -11,7 +11,6 @@ Swift library for detecting the running device's model and screen size.
 
 With the newer  devices, developers have more work to do. This library simplifies their job by allowing them to get information about the running device and easily target the ones they want.
 
-Inspired from [SDVersion](https://github.com/sebyddd/SDVersion).
 # Installation
 ## Cocoapods
 Device is available through [CocoaPods](http://cocoapods.org). To install
