@@ -33,7 +33,7 @@ public class Device {
             case "iPad4,4", "iPad4,5", "iPad4,6":            return Version.iPadMini2
             case "iPad4,7", "iPad4,8", "iPad4,9":            return Version.iPadMini3
             case "iPad5,1", "iPad5,2":                       return Version.iPadMini4
-            case "iPad6,8":                                  return Version.iPadPro
+            case "iPad6,7", "iPad6,8":                       return Version.iPadPro
             
             /*** iPod ***/
             case "iPod1,1":                                  return Version.iPodTouch1Gen
