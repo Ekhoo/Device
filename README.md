@@ -107,4 +107,5 @@ Lucas Ortis:
 
 # License
 
+Inspired from [SDVersion](https://github.com/sebyddd/SDVersion/).
 Device is available under the MIT license. See the LICENSE file for more info.
