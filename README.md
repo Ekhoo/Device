@@ -7,9 +7,7 @@
 ![](https://img.shields.io/badge/Carthage-unavailable-red.svg?style=flat)
 ![](https://img.shields.io/badge/Swift 2-compatible-4BC51D.svg?style=flat-square)
 
-Swift library for detecting the running device's model and screen size.
-
-With the newer  devices, developers have more work to do. This library simplifies their job by allowing them to get information about the running device and easily target the ones they want.
+Device detect the current  device model and screen size.
 
 # Installation
 ## Cocoapods
