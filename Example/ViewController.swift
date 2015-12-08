@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         
         /*** Helpers ***/
         if Device.isEqualToScreenSize(Size.Screen4Inch) {
-            print("It's a 5.5 inch screen")
+            print("It's a 4 inch screen")
         }
         
         if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
