@@ -16,6 +16,7 @@
 		BE11EF0E1BE4000700816835 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0D1BE4000700816835 /* Device.swift */; };
 		BE11EF101BE4001A00816835 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0F1BE4001A00816835 /* Version.swift */; };
 		BE11EF121BE4002800816835 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF111BE4002800816835 /* Size.swift */; };
+		F8E8F03A1C176DB7006B19D2 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8F0391C176DB7006B19D2 /* Type.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BE11EF0D1BE4000700816835 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = SOURCE_ROOT; };
 		BE11EF0F1BE4001A00816835 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Version.swift; path = Source/Version.swift; sourceTree = SOURCE_ROOT; };
 		BE11EF111BE4002800816835 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Source/Size.swift; sourceTree = SOURCE_ROOT; };
+		F8E8F0391C176DB7006B19D2 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = Source/Type.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				BE11EF0D1BE4000700816835 /* Device.swift */,
 				BE11EF0F1BE4001A00816835 /* Version.swift */,
 				BE11EF111BE4002800816835 /* Size.swift */,
+				F8E8F0391C176DB7006B19D2 /* Type.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				BE11EF051BE3FD9200816835 /* ViewController.swift in Sources */,
 				BE11EF101BE4001A00816835 /* Version.swift in Sources */,
 				BE11EF011BE3FD9200816835 /* AppDelegate.swift in Sources */,
+				F8E8F03A1C176DB7006B19D2 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
