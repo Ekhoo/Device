@@ -53,7 +53,7 @@ func myFunc() {
             case .iPhone6S:      print("It's an iPhone 6S")
             case .iPhone6Plus:   print("It's an iPhone 6 Plus")
             case .iPhone6SPlus:  print("It's an iPhone 6 S Plus")
-            
+
             /*** iPad ***/
             case .iPad1:         print("It's an iPad 1")
             case .iPad2:         print("It's an iPad 2")
@@ -66,7 +66,7 @@ func myFunc() {
             case .iPadMini3:     print("It's an iPad Mini 3")
             case .iPadMini4:     print("It's an iPad Mini 4")
             case .iPadPro:       print("It's an iPad Pro")
-            
+
             /*** iPod ***/
             case .iPodTouch1Gen: print("It's a iPod touch generation 1")
             case .iPodTouch2Gen: print("It's a iPod touch generation 2")
@@ -74,10 +74,10 @@ func myFunc() {
             case .iPodTouch4Gen: print("It's a iPod touch generation 4")
             case .iPodTouch5Gen: print("It's a iPod touch generation 5")
             case .iPodTouch6Gen: print("It's a iPod touch generation 6")
-            
+
             /*** Simulator ***/
             case .Simulator:    print("It's a Simulator")
-            
+
             /*** Unknown ***/
             default:            print("It's an unknown device")
         }
@@ -98,6 +98,20 @@ func myFunc() {
 }
 ```
 
+## Device type
+```swift
+func myFunc() {
+        /*** Display the device type ***/
+        switch Device.type() {
+            case .iPod:         print("It's an iPod")
+            case .iPhone:       print("It's an iPhone")
+            case .iPad:         print("It's an iPad")
+            case .Simulator:    print("It's a Simulated device")
+            default:            print("Unknown device type")
+        }
+}
+```
+
 ## Helpers
 ```swift
 func myFunc() {
@@ -105,11 +119,11 @@ func myFunc() {
         if Device.isEqualToScreenSize(Size.Screen4Inch) {
             print("It's a 4 inch screen")
         }
-        
+
         if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
             print("Your device screen is larger than 4.7 inch")
         }
-        
+
         if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
             print("Your device screen is smaller than 4.7 inch")
         }

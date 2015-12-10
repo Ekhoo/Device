@@ -9,6 +9,15 @@
 import UIKit
 
 public class Device {
+    static private func getVersionCode() -> String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        
+        let versionCode: String = String(UTF8String: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: NSASCIIStringEncoding)!.UTF8String)!
+        
+        return versionCode
+    }
+    
     static private func getVersion(code code: String) -> Version {
         switch code {
             /*** iPhone ***/
@@ -50,11 +59,47 @@ public class Device {
         }
     }
     
-    static public func version() -> Version {
-        var systemInfo = utsname()
-        uname(&systemInfo)
+    static private func getType(code code: String) -> Type {
+        let versionCode = Device.getVersionCode()
         
-        let versionName: String = String(UTF8String: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: NSASCIIStringEncoding)!.UTF8String)!
+        switch versionCode {
+            case "iPhone3,1", "iPhone3,2", "iPhone3,3",
+            "iPhone4,1", "iPhone4,2", "iPhone4,3",
+            "iPhone5,1", "iPhone5,2",
+            "iPhone5,3", "iPhone5,4",
+            "iPhone6,1", "iPhone6,2",
+            "iPhone7,2",
+            "iPhone7,1",
+            "iPhone8,1",
+            "iPhone8,2":                                    return Type.iPhone
+
+            case "iPad1,1",
+            "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4",
+            "iPad3,1", "iPad3,2", "iPad3,3",
+            "iPad3,4", "iPad3,5", "iPad3,6",
+            "iPad4,1", "iPad4,2", "iPad4,3",
+            "iPad5,3", "iPad5,4",
+            "iPad2,5", "iPad2,6", "iPad2,7",
+            "iPad4,4", "iPad4,5", "iPad4,6",
+            "iPad4,7", "iPad4,8", "iPad4,9",
+            "iPad5,1", "iPad5,2",
+            "iPad6,7", "iPad6,8":                           return Type.iPad
+
+            case "iPod1,1",
+            "iPod2,1",
+            "iPod3,1",
+            "iPod4,1",
+            "iPod5,1",
+            "iPod7,1":
+                                                            return Type.iPod
+            case "i386", "x86_64":                          return Type.Simulator
+            default:                                        return Type.Unknown
+        }
+    }
+
+    
+    static public func version() -> Version {
+        let versionName = Device.getVersionCode()
         
         return Device.getVersion(code: versionName)
     }
@@ -76,6 +121,12 @@ public class Device {
             default:
                 return Size.UnknownSize
         }
+    }
+    
+    static public func type() -> Type {
+        let versionName = Device.getVersionCode()
+        
+        return Device.getType(code: versionName)
     }
     
     static public func isEqualToScreenSize(size: Size) -> Bool {

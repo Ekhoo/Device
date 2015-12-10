@@ -63,9 +63,17 @@ class ViewController: UIViewController {
             default:             print("Unknown size")
         }
         
+        switch Device.type() {
+            case .iPod:         print("It's an iPod")
+            case .iPhone:       print("It's an iPhone")
+            case .iPad:         print("It's an iPad")
+            case .Simulator:    print("It's a Simulated device")
+            default:            print("Unknown device type")
+        }
+        
         /*** Helpers ***/
         if Device.isEqualToScreenSize(Size.Screen4Inch) {
-            print("It's a 5.5 inch screen")
+            print("It's a 4 inch screen")
         }
         
         if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
