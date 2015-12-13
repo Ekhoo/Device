@@ -30,3 +30,13 @@ public enum Size: Int {
         }
     }
 }
+
+extension Size: Comparable {}
+
+public func ==(x: Size, y: Size) -> Bool {
+    return x.rawValue == y.rawValue
+}
+
+public func <(x: Size, y: Size) -> Bool {
+    return x.rawValue < y.rawValue
+}
