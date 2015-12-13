@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         /*** Display the device version ***/
-        switch Device.version() {
+        switch Device.version {
             /*** iPhone ***/
             case .iPhone4:       print("It's an iPhone 4")
             case .iPhone4S:      print("It's an iPhone 4S")
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         }
         
         /*** Display the device screen size ***/
-        switch Device.size() {
+        switch Device.size {
             case .Screen3_5Inch: print("It's a 3.5 inch screen")
             case .Screen4Inch:   print("It's a 4 inch screen")
             case .Screen4_7Inch: print("It's a 4.7 inch screen")
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
             default:             print("Unknown size")
         }
         
-        switch Device.type() {
+        switch Device.type {
             case .iPod:         print("It's an iPod")
             case .iPhone:       print("It's an iPhone")
             case .iPad:         print("It's an iPad")
@@ -73,15 +73,15 @@ class ViewController: UIViewController {
         }
         
         /*** Helpers ***/
-        if Device.isEqualToScreenSize(Size.Screen4Inch) {
+        if Device.size == .Screen4Inch {
             print("It's a 4 inch screen")
         }
         
-        if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
+        if Device.size > .Screen4_7Inch {
             print("Your device screen is larger than 4.7 inch")
         }
         
-        if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
+        if Device.size < .Screen4_7Inch {
             print("Your device screen is smaller than 4.7 inch")
         }
     }

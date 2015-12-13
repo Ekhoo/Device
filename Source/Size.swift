@@ -15,7 +15,7 @@ public enum Size: Int {
     case Screen4_7Inch
     case Screen5_5Inch
     
-    init(height: Double) {
+    init(height: CGFloat) {
         switch height {
         case 480:
             self = .Screen3_5Inch

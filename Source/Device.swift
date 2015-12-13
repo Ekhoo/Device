@@ -8,53 +8,32 @@
 
 import UIKit
 
-public class Device {
-    static private func getVersionCode() -> String {
+public class 📱Device {
+    private lazy var versionCode: String = {
         var systemInfo = utsname()
         uname(&systemInfo)
         
         let versionCode: String = String(UTF8String: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: NSASCIIStringEncoding)!.UTF8String)!
         
         return versionCode
+    }()
+    
+    private lazy var screenHeight: CGFloat = {
+        let size = UIScreen.mainScreen().bounds.size
+        return max(size.width, size.height)
+    }()
+    
+    public var version: Version {
+        return Version(code: versionCode)
     }
     
-    static private func getVersion(code code: String) -> Version {
-        return Version(code: code)
+    public var type: Type {
+        return Type(code: versionCode)
     }
     
-    static private func getType(code code: String) -> Type {
-        return Type(code: code)
-    }
-    
-    static public func version() -> Version {
-        let versionName = Device.getVersionCode()
-        
-        return Device.getVersion(code: versionName)
-    }
-    
-    static public func size() -> Size {
-        let w: Double = Double(CGRectGetWidth(UIScreen.mainScreen().bounds))
-        let h: Double = Double(CGRectGetHeight(UIScreen.mainScreen().bounds))
-        let screenHeight: Double = max(w, h)
-        
+    public var size: Size {
         return Size(height: screenHeight)
     }
-    
-    static public func type() -> Type {
-        let versionName = Device.getVersionCode()
-        
-        return Device.getType(code: versionName)
-    }
-    
-    static public func isEqualToScreenSize(size: Size) -> Bool {
-        return Device.size() == size
-    }
-    
-    static public func isLargerThanScreenSize(size: Size) -> Bool {
-        return Device.size() > size
-    }
-    
-    static public func isSmallerThanScreenSize(size: Size) -> Bool {
-        return Device.size() < size
-    }
 }
+
+public let Device = 📱Device()
