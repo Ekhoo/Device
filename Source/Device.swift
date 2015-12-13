@@ -23,10 +23,8 @@ public class Device {
     }
     
     static private func getType(code code: String) -> Type {
-        let versionCode = Device.getVersionCode()
-        return Type(code: versionCode)
+        return Type(code: code)
     }
-
     
     static public func version() -> Version {
         let versionName = Device.getVersionCode()
