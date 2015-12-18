@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public enum Version: String {
+public enum Version {
     /*** iPhone ***/
     case iPhone4
     case iPhone4S

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public enum Type: String {
+public enum Type {
     case iPhone
     case iPad
     case iPod

@@ -8,8 +8,8 @@
 
 import UIKit
 
-public enum Size: Int {
-    case UnknownSize = 0
+public enum Size {
+    case UnknownSize
     case Screen3_5Inch
     case Screen4Inch
     case Screen4_7Inch
@@ -34,9 +34,9 @@ public enum Size: Int {
 extension Size: Comparable {}
 
 public func ==(x: Size, y: Size) -> Bool {
-    return x.rawValue == y.rawValue
+    return x.hashValue == y.hashValue
 }
 
 public func <(x: Size, y: Size) -> Bool {
-    return x.rawValue < y.rawValue
+    return x.hashValue < y.hashValue
 }
