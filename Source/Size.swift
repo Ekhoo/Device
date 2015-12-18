@@ -9,7 +9,7 @@
 import UIKit
 
 public enum Size {
-    case UnknownSize
+    case Unknown
     case Screen3_5Inch
     case Screen4Inch
     case Screen4_7Inch
@@ -26,7 +26,7 @@ public enum Size {
         case 736:
             self = .Screen5_5Inch
         default:
-            self = .UnknownSize
+            self = .Unknown
         }
     }
 }
