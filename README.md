@@ -112,6 +112,18 @@ func myFunc() {
 }
 ```
 
+## Device system version
+```swift
+func myFunc() {
+    /*** Display the device system version ***/
+    print(Device.systemVersion)
+
+    if Device.systemVersion > "9.0" {
+        print("The iOS version is greater than 9.0")
+    }
+}
+```
+
 ## Helpers
 ```swift
 func myFunc() {

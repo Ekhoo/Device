@@ -23,6 +23,8 @@ public class 📱Device {
         return max(size.width, size.height)
     }()
     
+    private(set) public lazy var systemVersion = UIDevice.currentDevice().systemVersion
+    
     public var version: Version {
         return Version(code: versionCode)
     }

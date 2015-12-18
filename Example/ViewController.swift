@@ -84,6 +84,12 @@ class ViewController: UIViewController {
         if Device.size < .Screen4_7Inch {
             print("Your device screen is smaller than 4.7 inch")
         }
+        
+        print(Device.systemVersion)
+        
+        if Device.systemVersion > "9.0" {
+            print("The iOS version is greater than 9.0")
+        }
     }
 
     override func didReceiveMemoryWarning() {
