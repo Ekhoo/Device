@@ -105,8 +105,8 @@ public class Device {
     }
     
     static public func size() -> Size {
-        let w: Double = Double(UIScreen.mainScreen().bounds.size.width)
-        let h: Double = Double(UIScreen.mainScreen().bounds.size.height)
+        let w: Double = Double(CGRectGetWidth(UIScreen.mainScreen().bounds))
+        let h: Double = Double(CGRectGetHeight(UIScreen.mainScreen().bounds))
         let screenHeight: Double = max(w, h)
         
         switch screenHeight {
