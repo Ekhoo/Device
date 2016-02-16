@@ -15,7 +15,7 @@ Device is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Device", '~> 0.0.6'
+pod "Device", '~> 0.0.7'
 ```
 
 ## Carthage
@@ -32,7 +32,7 @@ $ brew install carthage
 To integrate Device into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ekhoo/Device" ~> 0.0.6
+github "Ekhoo/Device" ~> 0.0.7
 ```
 
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
