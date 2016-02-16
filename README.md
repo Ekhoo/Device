@@ -10,7 +10,7 @@
 Device detect the current  device model and screen size.
 
 # Installation
-## Cocoapods
+## CocoaPods
 Device is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
