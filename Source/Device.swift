@@ -85,7 +85,7 @@ public class Device {
             "iPad4,4", "iPad4,5", "iPad4,6",
             "iPad4,7", "iPad4,8", "iPad4,9",
             "iPad5,1", "iPad5,2",
-            "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":                           return Type.iPad
+            "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":     return Type.iPad
 
             case "iPod1,1",
             "iPod2,1",
