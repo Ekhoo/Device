@@ -32,7 +32,7 @@ $ brew install carthage
 To integrate Device into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ekhoo/Device" ~> 0.0.7
+github "Ekhoo/Device" ~> 0.0.8
 ```
 
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
