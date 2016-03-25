@@ -120,6 +120,15 @@ public class Device {
                 return UIScreen.mainScreen().scale == 3.0 ? Size.Screen5_5Inch : Size.Screen4_7Inch
             case 736:
                 return Size.Screen5_5Inch
+            case 1024:
+                switch Device.version() {
+                    case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
+                        return Size.Screen7_9Inch
+                    default:
+                        return Size.Screen9_7Inch
+                }
+            case 1366:
+                return Size.Screen12_9Inch
             default:
                 return Size.UnknownSize
         }
