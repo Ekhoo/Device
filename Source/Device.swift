@@ -142,4 +142,18 @@ public class Device {
     static public func isSmallerThanScreenSize(size: Size) -> Bool {
         return size.rawValue > Device.size().rawValue ? true : false;
     }
+    
+    static public func isPad() -> Bool {
+        return Device.type() == .iPad
+    }
+    
+    static public func isPhone() -> Bool {
+        return Device.type() == .iPhone
+        
+    }
+    
+    static public func isPod() -> Bool {
+        return Device.type() == .iPod
+    }
+    
 }
