@@ -156,4 +156,8 @@ public class Device {
         return Device.type() == .iPod
     }
     
+    static public func isSimulator() -> Bool {
+        return Device.type() == .Simulator
+    }
+    
 }
