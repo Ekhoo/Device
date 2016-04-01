@@ -110,6 +110,28 @@ func myFunc() {
             default:            print("Unknown device type")
         }
 }
+
+```
+
+or 
+
+```swift
+func myFunc() {
+        /*** Display the device type ***/
+        if (Device.isPad()){
+            print("It's an iPad")
+        }
+        else if (Device.isPhone()){
+            print("It's an iPhone")
+        }
+        else if (Device.isPod()){
+            print("It's an iPod")
+        }
+        else if (Device.isSimulator()){
+            print("It's a Simulated device")
+        }
+}
+
 ```
 
 ## Helpers
@@ -127,6 +149,7 @@ func myFunc() {
         if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
             print("Your device screen is smaller than 4.7 inch")
         }
+		
 }
 ```
 
