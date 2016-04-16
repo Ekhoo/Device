@@ -151,4 +151,8 @@ public class Device {
     static public func isSmallerThanScreenSize(size: Size) -> Bool {
         return size.rawValue > Device.size().rawValue ? true : false;
     }
+    
+    static public func isRetina() -> Bool {
+        return UIScreen.mainScreen().scale > 1.0
+    }
 }
