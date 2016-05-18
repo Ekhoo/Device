@@ -45,6 +45,10 @@ public class Device {
             case "iPad5,1", "iPad5,2":                       return Version.iPadMini4
             case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return Version.iPadPro
             
+            /*** AppleTV ***/
+            case "AppleTV5,1", "AppleTV5,2", "AppleTV5,3":
+                                                             return Version.AppleTV
+
             /*** iPod ***/
             case "iPod1,1":                                  return Version.iPodTouch1Gen
             case "iPod2,1":                                  return Version.iPodTouch2Gen
@@ -87,6 +91,9 @@ public class Device {
             "iPad5,1", "iPad5,2",
             "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":     return Type.iPad
 
+            case "AppleTV5,1", "AppleTV5,2", "AppleTV5,3":
+                                                            return Type.AppleTV
+
             case "iPod1,1",
             "iPod2,1",
             "iPod3,1",
@@ -109,9 +116,9 @@ public class Device {
     static public func size() -> Size {
         let w: Double = Double(CGRectGetWidth(UIScreen.mainScreen().bounds))
         let h: Double = Double(CGRectGetHeight(UIScreen.mainScreen().bounds))
-        let screenHeight: Double = max(w, h)
+        let maxLength: Double = max(w, h)
         
-        switch screenHeight {
+        switch maxLength {
             case 480:
                 return Size.Screen3_5Inch
             case 568:
@@ -129,6 +136,8 @@ public class Device {
                 }
             case 1366:
                 return Size.Screen12_9Inch
+            case 1920:
+                return Size.Screen1080pTV
             default:
                 return Size.UnknownSize
         }
