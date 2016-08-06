@@ -13,12 +13,12 @@ public class Device {
         var systemInfo = utsname()
         uname(&systemInfo)
         
-        let versionCode: String = String(UTF8String: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: NSASCIIStringEncoding)!.UTF8String)!
+        let versionCode: String = String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
         
         return versionCode
     }
     
-    static private func getVersion(code code: String) -> Version {
+    static private func getVersion(code: String) -> Version {
         switch code {
             /*** iPhone ***/
             case "iPhone3,1", "iPhone3,2", "iPhone3,3":      return Version.iPhone4
@@ -60,7 +60,7 @@ public class Device {
         }
     }
     
-    static private func getType(code code: String) -> Type {
+    static private func getType(code: String) -> Type {
         let versionCode = Device.getVersionCode()
         
         switch versionCode {
@@ -107,30 +107,30 @@ public class Device {
     }
     
     static public func size() -> Size {
-        let w: Double = Double(CGRectGetWidth(UIScreen.mainScreen().bounds))
-        let h: Double = Double(CGRectGetHeight(UIScreen.mainScreen().bounds))
+        let w: Double = Double(UIScreen.main.bounds.width)
+        let h: Double = Double(UIScreen.main.bounds.height)
         let screenHeight: Double = max(w, h)
         
         switch screenHeight {
             case 480:
-                return Size.Screen3_5Inch
+                return Size.screen3_5Inch
             case 568:
-                return Size.Screen4Inch
+                return Size.screen4Inch
             case 667:
-                return UIScreen.mainScreen().scale == 3.0 ? Size.Screen5_5Inch : Size.Screen4_7Inch
+                return UIScreen.main.scale == 3.0 ? Size.screen5_5Inch : Size.screen4_7Inch
             case 736:
-                return Size.Screen5_5Inch
+                return Size.screen5_5Inch
             case 1024:
                 switch Device.version() {
                     case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
-                        return Size.Screen7_9Inch
+                        return Size.screen7_9Inch
                     default:
-                        return Size.Screen9_7Inch
+                        return Size.screen9_7Inch
                 }
             case 1366:
-                return Size.Screen12_9Inch
+                return Size.screen12_9Inch
             default:
-                return Size.UnknownSize
+                return Size.unknownSize
         }
     }
     
@@ -140,15 +140,15 @@ public class Device {
         return Device.getType(code: versionName)
     }
     
-    static public func isEqualToScreenSize(size: Size) -> Bool {
+    static public func isEqualToScreenSize(_ size: Size) -> Bool {
         return size == Device.size() ? true : false;
     }
     
-    static public func isLargerThanScreenSize(size: Size) -> Bool {
+    static public func isLargerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue < Device.size().rawValue ? true : false;
     }
     
-    static public func isSmallerThanScreenSize(size: Size) -> Bool {
+    static public func isSmallerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue > Device.size().rawValue ? true : false;
     }
 }
