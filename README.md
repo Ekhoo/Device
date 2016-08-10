@@ -15,7 +15,7 @@ Device is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Device", '~> 1.0.1'
+pod "Device", '~> 1.0.2'
 ```
 
 ## Carthage
@@ -32,7 +32,7 @@ $ brew install carthage
 To integrate Device into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ekhoo/Device" ~> 1.0.1
+github "Ekhoo/Device" ~> 1.0.2
 ```
 
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
@@ -113,6 +113,28 @@ func myFunc() {
             default:            print("Unknown device type")
         }
 }
+
+```
+
+or 
+
+```swift
+func myFunc() {
+        /*** Display the device type ***/
+        if (Device.isPad()){
+            print("It's an iPad")
+        }
+        else if (Device.isPhone()){
+            print("It's an iPhone")
+        }
+        else if (Device.isPod()){
+            print("It's an iPod")
+        }
+        else if (Device.isSimulator()){
+            print("It's a Simulated device")
+        }
+}
+
 ```
 
 ## Helpers
@@ -134,6 +156,7 @@ func myFunc() {
         if Device.isRetina() {
             print("It's a retina display")
         }
+        
 }
 ```
 

@@ -155,4 +155,22 @@ public class Device {
     static public func isRetina() -> Bool {
         return UIScreen.mainScreen().scale > 1.0
     }
+
+    static public func isPad() -> Bool {
+        return Device.type() == .iPad
+    }
+    
+    static public func isPhone() -> Bool {
+        return Device.type() == .iPhone
+        
+    }
+    
+    static public func isPod() -> Bool {
+        return Device.type() == .iPod
+    }
+    
+    static public func isSimulator() -> Bool {
+        return Device.type() == .Simulator
+    }
+    
 }
