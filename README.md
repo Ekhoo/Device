@@ -152,7 +152,11 @@ func myFunc() {
         if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
             print("Your device screen is smaller than 4.7 inch")
         }
-		
+
+        if Device.isRetina() {
+            print("It's a retina display")
+        }
+        
 }
 ```
 

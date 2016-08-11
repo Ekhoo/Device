@@ -152,6 +152,10 @@ public class Device {
         return size.rawValue > Device.size().rawValue ? true : false;
     }
     
+    static public func isRetina() -> Bool {
+        return UIScreen.mainScreen().scale > 1.0
+    }
+
     static public func isPad() -> Bool {
         return Device.type() == .iPad
     }
