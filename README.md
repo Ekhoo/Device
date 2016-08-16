@@ -65,7 +65,8 @@ func myFunc() {
             case .iPadMini2:     print("It's an iPad Mini 2")
             case .iPadMini3:     print("It's an iPad Mini 3")
             case .iPadMini4:     print("It's an iPad Mini 4")
-            case .iPadPro:       print("It's an iPad Pro")
+            case .iPadPro129Inch:       print("It's an iPad Pro 12.9inch")
+            case .iPadPro97Inch:       print("It's an iPad Pro 9.7inch")
 
             /*** iPod ***/
             case .iPodTouch1Gen: print("It's a iPod touch generation 1")
