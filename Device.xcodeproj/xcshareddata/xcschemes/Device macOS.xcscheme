@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E2C023A91D6331010033AD25"
-               BuildableName = "Device_macOS.framework"
+               BuildableName = "Device.framework"
                BlueprintName = "Device macOS"
                ReferencedContainer = "container:Device.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2C023A91D6331010033AD25"
-            BuildableName = "Device_macOS.framework"
+            BuildableName = "Device.framework"
             BlueprintName = "Device macOS"
             ReferencedContainer = "container:Device.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2C023A91D6331010033AD25"
-            BuildableName = "Device_macOS.framework"
+            BuildableName = "Device.framework"
             BlueprintName = "Device macOS"
             ReferencedContainer = "container:Device.xcodeproj">
          </BuildableReference>
