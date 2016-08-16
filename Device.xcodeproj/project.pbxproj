@@ -63,7 +63,7 @@
 		BE11EF091BE3FE9500816835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		BE11EF0F1BE4001A00816835 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		BE11EF111BE4002800816835 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
-		E2C023AA1D6331010033AD25 /* Device macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Device macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C023AA1D6331010033AD25 /* Device_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C023AC1D6331010033AD25 /* Device macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Device macOS.h"; sourceTree = "<group>"; };
 		E2C023AE1D6331010033AD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2C023B61D6331A00033AD25 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			children = (
 				BE11EEE71BE3FC0300816835 /* Example.app */,
 				001C44691C3C08C000F6599D /* Device.framework */,
-				E2C023AA1D6331010033AD25 /* Device macOS.framework */,
+				E2C023AA1D6331010033AD25 /* Device_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			);
 			name = "Device macOS";
 			productName = "Device macOS";
-			productReference = E2C023AA1D6331010033AD25 /* Device macOS.framework */;
+			productReference = E2C023AA1D6331010033AD25 /* Device_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -582,7 +582,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbaranes.Device-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Device_macOS;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -607,7 +607,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbaranes.Device-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Device_macOS;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -652,6 +652,7 @@
 				E2C023B01D6331010033AD25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,7 +12,7 @@ public enum Type: String {
     case iPad
     case iPod
     case simulator
-    #elseif(OSX)
+    #elseif os(OSX)
     case iMac
     case MacMini
     case MacPro

@@ -21,9 +21,11 @@ public enum Size: Int, Comparable {
     case Screen12Inch
     case Screen13Inch
     case Screen15Inch
+    case Screen17Inch
     case Screen20Inch
     case Screen21_5Inch
     case Screen24Inch
+    case Screen27Inch
     #endif
 }
 
