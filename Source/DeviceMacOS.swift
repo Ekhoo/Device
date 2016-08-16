@@ -29,6 +29,10 @@ public class Device {
             return Type.MacBookAir
         } else if versionCode.hasPrefix("MacBook") {
             return Type.MacBook
+        } else if versionCode.hasPrefix("MacMini") {
+            return Type.MacMini
+        } else if versionCode.hasPrefix("Xserve") {
+            return Type.Xserve
         }
         return Type.Unknown
     }
