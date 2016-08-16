@@ -35,17 +35,18 @@ open class Device {
             case "iPhone9,2", "iPhone9,4":                   return .iPhone7Plus
 
             /*** iPad ***/
-            case "iPad1,1":                                  return .iPad1
-            case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .iPad2
-            case "iPad3,1", "iPad3,2", "iPad3,3":            return .iPad3
-            case "iPad3,4", "iPad3,5", "iPad3,6":            return .iPad4
-            case "iPad4,1", "iPad4,2", "iPad4,3":            return .iPadAir
-            case "iPad5,3", "iPad5,4":                       return .iPadAir2
-            case "iPad2,5", "iPad2,6", "iPad2,7":            return .iPadMini
-            case "iPad4,4", "iPad4,5", "iPad4,6":            return .iPadMini2
-            case "iPad4,7", "iPad4,8", "iPad4,9":            return .iPadMini3
-            case "iPad5,1", "iPad5,2":                       return .iPadMini4
-            case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return .iPadPro
+            case "iPad1,1":                                  return Version.iPad1
+            case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return Version.iPad2
+            case "iPad3,1", "iPad3,2", "iPad3,3":            return Version.iPad3
+            case "iPad3,4", "iPad3,5", "iPad3,6":            return Version.iPad4
+            case "iPad4,1", "iPad4,2", "iPad4,3":            return Version.iPadAir
+            case "iPad5,3", "iPad5,4":                       return Version.iPadAir2
+            case "iPad2,5", "iPad2,6", "iPad2,7":            return Version.iPadMini
+            case "iPad4,4", "iPad4,5", "iPad4,6":            return Version.iPadMini2
+            case "iPad4,7", "iPad4,8", "iPad4,9":            return Version.iPadMini3
+            case "iPad5,1", "iPad5,2":                       return Version.iPadMini4
+            case "iPad6,7", "iPad6,8":                       return Version.iPadPro97Inch
+            case "iPad6,3", "iPad6,4":                       return Version.iPadPro129Inch
             
             /*** iPod ***/
             case "iPod1,1":                                  return .iPodTouch1Gen
