@@ -32,6 +32,9 @@ public enum Version: String {
     case iPadMini4
     case iPadPro
     
+    /*** AppleTV ***/
+    case AppleTV
+
     /*** iPod ***/
     case iPodTouch1Gen
     case iPodTouch2Gen

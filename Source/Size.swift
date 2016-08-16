@@ -15,4 +15,5 @@ public enum Size: Int {
     case Screen7_9Inch
     case Screen9_7Inch
     case Screen12_9Inch
+    case Screen1080pTV
 }

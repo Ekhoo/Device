@@ -14,6 +14,17 @@
 		006E76C41C3C09DE00656720 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0F1BE4001A00816835 /* Version.swift */; };
 		006E76C51C3C09DE00656720 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF111BE4002800816835 /* Size.swift */; };
 		006E76C61C3C09DE00656720 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8F0391C176DB7006B19D2 /* Type.swift */; };
+		1F91E6891CECC43500CF641E /* Device-tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F91E6881CECC43500CF641E /* Device-tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F91E69D1CECC44E00CF641E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0D1BE4000700816835 /* Device.swift */; };
+		1F91E69E1CECC44E00CF641E /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0F1BE4001A00816835 /* Version.swift */; };
+		1F91E69F1CECC44E00CF641E /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF111BE4002800816835 /* Size.swift */; };
+		1F91E6A01CECC44E00CF641E /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8F0391C176DB7006B19D2 /* Type.swift */; };
+		1F91E6A81CECC5F600CF641E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F91E6A71CECC5F600CF641E /* AppDelegate.swift */; };
+		1F91E6AA1CECC5F600CF641E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F91E6A91CECC5F600CF641E /* ViewController.swift */; };
+		1F91E6AD1CECC5F600CF641E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F91E6AB1CECC5F600CF641E /* Main.storyboard */; };
+		1F91E6AF1CECC5F600CF641E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F91E6AE1CECC5F600CF641E /* Assets.xcassets */; };
+		1F91E6B41CECC65F00CF641E /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F91E6861CECC43500CF641E /* Device.framework */; };
+		1F91E6B51CECC65F00CF641E /* Device.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F91E6861CECC43500CF641E /* Device.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE11EF011BE3FD9200816835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EEFC1BE3FD9200816835 /* AppDelegate.swift */; };
 		BE11EF021BE3FD9200816835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE11EEFD1BE3FD9200816835 /* Assets.xcassets */; };
 		BE11EF051BE3FD9200816835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF001BE3FD9200816835 /* ViewController.swift */; };
@@ -29,6 +40,13 @@
 			remoteGlobalIDString = 001C44681C3C08C000F6599D;
 			remoteInfo = Device;
 		};
+		1F91E6B61CECC65F00CF641E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE11EEDF1BE3FC0300816835 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F91E6851CECC43500CF641E;
+			remoteInfo = "Device-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,12 +61,32 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F91E6B81CECC65F00CF641E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1F91E6B51CECC65F00CF641E /* Device.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		001C44691C3C08C000F6599D /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C446C1C3C08C000F6599D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001C446D1C3C08C000F6599D /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		1F91E6861CECC43500CF641E /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F91E6881CECC43500CF641E /* Device-tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Device-tvOS.h"; sourceTree = "<group>"; };
+		1F91E68A1CECC43500CF641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F91E6A51CECC5F600CF641E /* Example-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F91E6A71CECC5F600CF641E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F91E6A91CECC5F600CF641E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F91E6AC1CECC5F600CF641E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F91E6AE1CECC5F600CF641E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F91E6B01CECC5F600CF641E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE11EEE71BE3FC0300816835 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE11EEFC1BE3FD9200816835 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		BE11EEFD1BE3FD9200816835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -67,6 +105,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F91E6821CECC43500CF641E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F91E6A21CECC5F600CF641E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F91E6B41CECC65F00CF641E /* Device.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,12 +143,35 @@
 			path = Device;
 			sourceTree = "<group>";
 		};
+		1F91E6871CECC43500CF641E /* Device-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				1F91E6881CECC43500CF641E /* Device-tvOS.h */,
+				1F91E68A1CECC43500CF641E /* Info.plist */,
+			);
+			path = "Device-tvOS";
+			sourceTree = "<group>";
+		};
+		1F91E6A61CECC5F600CF641E /* Example-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				1F91E6A71CECC5F600CF641E /* AppDelegate.swift */,
+				1F91E6A91CECC5F600CF641E /* ViewController.swift */,
+				1F91E6AB1CECC5F600CF641E /* Main.storyboard */,
+				1F91E6AE1CECC5F600CF641E /* Assets.xcassets */,
+				1F91E6B01CECC5F600CF641E /* Info.plist */,
+			);
+			path = "Example-tvOS";
+			sourceTree = "<group>";
+		};
 		BE11EEDE1BE3FC0300816835 = {
 			isa = PBXGroup;
 			children = (
 				BE11EF0C1BE3FFEB00816835 /* Source */,
 				BE11EEE91BE3FC0300816835 /* Example */,
 				001C446A1C3C08C000F6599D /* Device */,
+				1F91E6871CECC43500CF641E /* Device-tvOS */,
+				1F91E6A61CECC5F600CF641E /* Example-tvOS */,
 				BE11EEE81BE3FC0300816835 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +181,8 @@
 			children = (
 				BE11EEE71BE3FC0300816835 /* Example.app */,
 				001C44691C3C08C000F6599D /* Device.framework */,
+				1F91E6861CECC43500CF641E /* Device.framework */,
+				1F91E6A51CECC5F600CF641E /* Example-tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +223,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F91E6831CECC43500CF641E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F91E6891CECC43500CF641E /* Device-tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +251,43 @@
 			productName = Device;
 			productReference = 001C44691C3C08C000F6599D /* Device.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		1F91E6851CECC43500CF641E /* Device-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F91E69B1CECC43500CF641E /* Build configuration list for PBXNativeTarget "Device-tvOS" */;
+			buildPhases = (
+				1F91E6811CECC43500CF641E /* Sources */,
+				1F91E6821CECC43500CF641E /* Frameworks */,
+				1F91E6831CECC43500CF641E /* Headers */,
+				1F91E6841CECC43500CF641E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Device-tvOS";
+			productName = "Device-tvOS";
+			productReference = 1F91E6861CECC43500CF641E /* Device.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1F91E6A41CECC5F600CF641E /* Example-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F91E6B11CECC5F600CF641E /* Build configuration list for PBXNativeTarget "Example-tvOS" */;
+			buildPhases = (
+				1F91E6A11CECC5F600CF641E /* Sources */,
+				1F91E6A21CECC5F600CF641E /* Frameworks */,
+				1F91E6A31CECC5F600CF641E /* Resources */,
+				1F91E6B81CECC65F00CF641E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F91E6B71CECC65F00CF641E /* PBXTargetDependency */,
+			);
+			name = "Example-tvOS";
+			productName = "Example-tvOS";
+			productReference = 1F91E6A51CECC5F600CF641E /* Example-tvOS.app */;
+			productType = "com.apple.product-type.application";
 		};
 		BE11EEE61BE3FC0300816835 /* Example */ = {
 			isa = PBXNativeTarget;
@@ -191,12 +314,18 @@
 		BE11EEDF1BE3FC0300816835 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Ekhoo;
 				TargetAttributes = {
 					001C44681C3C08C000F6599D = {
 						CreatedOnToolsVersion = 6.4;
+					};
+					1F91E6851CECC43500CF641E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					1F91E6A41CECC5F600CF641E = {
+						CreatedOnToolsVersion = 7.3;
 					};
 					BE11EEE61BE3FC0300816835 = {
 						CreatedOnToolsVersion = 7.1;
@@ -219,6 +348,8 @@
 			targets = (
 				001C44681C3C08C000F6599D /* Device */,
 				BE11EEE61BE3FC0300816835 /* Example */,
+				1F91E6851CECC43500CF641E /* Device-tvOS */,
+				1F91E6A41CECC5F600CF641E /* Example-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -228,6 +359,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F91E6841CECC43500CF641E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F91E6A31CECC5F600CF641E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F91E6AF1CECC5F600CF641E /* Assets.xcassets in Resources */,
+				1F91E6AD1CECC5F600CF641E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +402,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F91E6811CECC43500CF641E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F91E69E1CECC44E00CF641E /* Version.swift in Sources */,
+				1F91E69F1CECC44E00CF641E /* Size.swift in Sources */,
+				1F91E69D1CECC44E00CF641E /* Device.swift in Sources */,
+				1F91E6A01CECC44E00CF641E /* Type.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F91E6A11CECC5F600CF641E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F91E6AA1CECC5F600CF641E /* ViewController.swift in Sources */,
+				1F91E6A81CECC5F600CF641E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE11EEE31BE3FC0300816835 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,9 +439,22 @@
 			target = 001C44681C3C08C000F6599D /* Device */;
 			targetProxy = 001C447E1C3C08C000F6599D /* PBXContainerItemProxy */;
 		};
+		1F91E6B71CECC65F00CF641E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F91E6851CECC43500CF641E /* Device-tvOS */;
+			targetProxy = 1F91E6B61CECC65F00CF641E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1F91E6AB1CECC5F600CF641E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F91E6AC1CECC5F600CF641E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		BE11EF061BE3FE9500816835 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -335,6 +515,86 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1F91E6971CECC43500CF641E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Device-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.toshi0383.Device-tvOS";
+				PRODUCT_NAME = Device;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1F91E6981CECC43500CF641E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Device-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.toshi0383.Device-tvOS";
+				PRODUCT_NAME = Device;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1F91E6B21CECC5F600CF641E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "Example-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.toshi0383.Example-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		1F91E6B31CECC5F600CF641E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "Example-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.toshi0383.Example-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Release;
 		};
@@ -426,9 +686,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -445,9 +705,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -469,6 +729,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1F91E69B1CECC43500CF641E /* Build configuration list for PBXNativeTarget "Device-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F91E6971CECC43500CF641E /* Debug */,
+				1F91E6981CECC43500CF641E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1F91E6B11CECC5F600CF641E /* Build configuration list for PBXNativeTarget "Example-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F91E6B21CECC5F600CF641E /* Debug */,
+				1F91E6B31CECC5F600CF641E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		BE11EEE21BE3FC0300816835 /* Build configuration list for PBXProject "Device" */ = {
 			isa = XCConfigurationList;
