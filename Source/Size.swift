@@ -8,6 +8,7 @@
 
 public enum Size: Int, Comparable {
     case unknownSize = 0
+    #if os(iOS)
     case screen3_5Inch
     case screen4Inch
     case screen4_7Inch
@@ -15,6 +16,15 @@ public enum Size: Int, Comparable {
     case screen7_9Inch
     case screen9_7Inch
     case screen12_9Inch
+    #elseif os(OSX)
+    case Screen11Inch
+    case Screen12Inch
+    case Screen13Inch
+    case Screen15Inch
+    case Screen20Inch
+    case Screen21_5Inch
+    case Screen24Inch
+    #endif
 }
 
 public func <(lhs: Size, rhs: Size) -> Bool {
