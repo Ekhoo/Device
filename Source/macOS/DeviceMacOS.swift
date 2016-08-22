@@ -36,12 +36,16 @@ public class Device {
         }
         return Type.Unknown
     }
-
-    static public func size() -> Size {
+    
+    private static func sizeInInches() -> CGFloat {
         let screen = NSScreen.mainScreen()
         let description = screen?.deviceDescription
         let displayPhysicalSize = CGDisplayScreenSize(description?["NSScreenNumber"] as? CGDirectDisplayID ?? 0)
-        let sizeInInches = floor(sqrt(pow(displayPhysicalSize.width, 2) + pow(displayPhysicalSize.height, 2)) * 0.0393701);
+        return floor(sqrt(pow(displayPhysicalSize.width, 2) + pow(displayPhysicalSize.height, 2)) * 0.0393701);
+    }
+
+    static public func size() -> Size {
+        let sizeInInches = Device.sizeInInches()
 
         switch sizeInInches {
         case 11: 
@@ -65,6 +69,10 @@ public class Device {
         default:
             return Size.UnknownSize
         }
+    }
+    
+    static public func version() -> String {
+        return String(Device.type()) + " " + String(Device.sizeInInches()) + "-inch"
     }
 
     static public func type() -> Type {
