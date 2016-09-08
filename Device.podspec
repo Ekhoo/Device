@@ -12,4 +12,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Ekhoo/Device.git", :tag => s.version.to_s }
   s.source_files = "Source/*.swift"
   s.requires_arc = true
+
+  s.xcconfig = {
+    'SWIFT_VERSION' => '2.3'
+  }
 end
