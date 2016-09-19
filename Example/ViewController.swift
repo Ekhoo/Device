@@ -58,13 +58,13 @@ class ViewController: UIViewController {
         
         /*** Display the device screen size ***/
         switch Device.size() {
-            case .Screen3_5Inch:  print("It's a 3.5 inch screen")
-            case .Screen4Inch:    print("It's a 4 inch screen")
-            case .Screen4_7Inch:  print("It's a 4.7 inch screen")
-            case .Screen5_5Inch:  print("It's a 5.5 inch screen")
-            case .Screen7_9Inch:  print("It's a 7.9 inch screen")
-            case .Screen9_7Inch:  print("It's a 9.7 inch screen")
-            case .Screen12_9Inch: print("It's a 12.9 inch screen")
+            case .screen3_5Inch:  print("It's a 3.5 inch screen")
+            case .screen4Inch:    print("It's a 4 inch screen")
+            case .screen4_7Inch:  print("It's a 4.7 inch screen")
+            case .screen5_5Inch:  print("It's a 5.5 inch screen")
+            case .screen7_9Inch:  print("It's a 7.9 inch screen")
+            case .screen9_7Inch:  print("It's a 9.7 inch screen")
+            case .screen12_9Inch: print("It's a 12.9 inch screen")
             default:              print("Unknown size")
         }
         
@@ -77,15 +77,15 @@ class ViewController: UIViewController {
         }
         
         /*** Helpers ***/
-        if Device.isEqualToScreenSize(Size.Screen4Inch) {
+        if Device.isEqualToScreenSize(Size.screen4Inch) {
             print("It's a 4 inch screen")
         }
         
-        if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
+        if Device.isLargerThanScreenSize(Size.screen4_7Inch) {
             print("Your device screen is larger than 4.7 inch")
         }
         
-        if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
+        if Device.isSmallerThanScreenSize(Size.screen4_7Inch) {
             print("Your device screen is smaller than 4.7 inch")
         }
     }
