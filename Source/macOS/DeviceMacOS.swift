@@ -12,12 +12,12 @@ public class Device {
     static private func getVersionCode() -> String {
         var size : Int = 0
         sysctlbyname("hw.model", nil, &size, nil, 0)
-        var model = [CChar](count: Int(size), repeatedValue: 0)
+        var model = [CChar](repeating: 0, count: Int(size))
         sysctlbyname("hw.model", &model, &size, nil, 0)
-        return String.fromCString(model) ?? ""
+        return String.init(validatingUTF8: model) ?? ""
     }
 
-    static private func getType(code code: String) -> Type {
+    static private func getType(code: String) -> Type {
         let versionCode = Device.getVersionCode()
         if versionCode.hasPrefix("MacPro") {
             return Type.MacPro
@@ -38,7 +38,7 @@ public class Device {
     }
     
     private static func sizeInInches() -> CGFloat {
-        let screen = NSScreen.mainScreen()
+        let screen = NSScreen.main()
         let description = screen?.deviceDescription
         let displayPhysicalSize = CGDisplayScreenSize(description?["NSScreenNumber"] as? CGDirectDisplayID ?? 0)
         return floor(sqrt(pow(displayPhysicalSize.width, 2) + pow(displayPhysicalSize.height, 2)) * 0.0393701);
@@ -49,30 +49,30 @@ public class Device {
 
         switch sizeInInches {
         case 11: 
-            return Size.Screen11Inch
+            return Size.screen11Inch
         case 12:
-            return Size.Screen12Inch
+            return Size.screen12Inch
         case 13:
-            return Size.Screen13Inch
+            return Size.screen13Inch
         case 15:
-            return Size.Screen15Inch
+            return Size.screen15Inch
         case 17:
-            return Size.Screen17Inch
+            return Size.screen17Inch
         case 20:
-            return Size.Screen20Inch
+            return Size.screen20Inch
         case 21:
-            return Size.Screen21_5Inch
+            return Size.screen21_5Inch
         case 24:
-            return Size.Screen24Inch
+            return Size.screen24Inch
         case 27:
-            return Size.Screen27Inch
+            return Size.screen27Inch
         default:
-            return Size.UnknownSize
+            return Size.unknownSize
         }
     }
     
     static public func version() -> String {
-        return String(Device.type()) + " " + String(Device.sizeInInches()) + "-inch"
+        return String(describing: Device.type()) + " " + String(describing: Device.sizeInInches()) + "-inch"
     }
 
     static public func type() -> Type {

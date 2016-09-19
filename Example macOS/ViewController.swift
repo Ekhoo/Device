@@ -23,12 +23,12 @@ class ViewController: NSViewController {
 
         /*** Display the device screen size ***/
         switch Device.size() {
-        case .Screen11Inch:     print("It's a 11 inch screen")
-        case .Screen12Inch:     print("It's a 12 inch screen")
-        case .Screen13Inch:     print("It's a 13 inch screen")
-        case .Screen15Inch:     print("It's a 15 inch screen")
-        case .Screen17Inch:     print("It's a 17 inch screen")
-        case .Screen21_5Inch:   print("It's a 21.5 inch screen")
+        case .screen11Inch:     print("It's a 11 inch screen")
+        case .screen12Inch:     print("It's a 12 inch screen")
+        case .screen13Inch:     print("It's a 13 inch screen")
+        case .screen15Inch:     print("It's a 15 inch screen")
+        case .screen17Inch:     print("It's a 17 inch screen")
+        case .screen21_5Inch:   print("It's a 21.5 inch screen")
         default:                print("Unknown size")
         }
     }
