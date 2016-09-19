@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
 ![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![](https://img.shields.io/badge/Swift 2-compatible-4BC51D.svg?style=flat-square)
+![](https://img.shields.io/badge/Swift 3-compatible-4BC51D.svg?style=flat-square)
 
 Device detect the current  device model and screen size.
 
