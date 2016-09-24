@@ -27,6 +27,8 @@ class ViewController: UIViewController {
             case .iPhone6Plus:   print("It's an iPhone 6 Plus")
             case .iPhone6SPlus:  print("It's an iPhone 6 S Plus")
             case .iPhoneSE:      print("It's an iPhone SE")
+            case .iPhone7:       print("It's an iPhone 7")
+            case .iPhone7Plus:   print("It's an iPhone 7 Plus")
             
             /*** iPad ***/
             case .iPad1:         print("It's an iPad 1")
