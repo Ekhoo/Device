@@ -31,7 +31,9 @@ open class Device {
             case "iPhone8,1":                                return Version.iPhone6S
             case "iPhone8,2":                                return Version.iPhone6SPlus
             case "iPhone8,4":                                return Version.iPhoneSE
-            
+            case "iPhone9,1", "iPhone9,3":                   return Version.iPhone7
+            case "iPhone9,2", "iPhone9,4":                   return Version.iPhone7Plus
+
             /*** iPad ***/
             case "iPad1,1":                                  return Version.iPad1
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return Version.iPad2
@@ -73,7 +75,9 @@ open class Device {
             "iPhone7,1",
             "iPhone8,1",
             "iPhone8,2",
-            "iPhone8,4":                                    return Type.iPhone
+            "iPhone8,4",
+            "iPhone9,1", "iPhone9,3",
+            "iPhone9,2", "iPhone9,4":                       return Type.iPhone
 
             case "iPad1,1",
             "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4",
