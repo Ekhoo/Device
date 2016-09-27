@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
 ![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![](https://img.shields.io/badge/Swift 2-compatible-4BC51D.svg?style=flat-square)
+![](https://img.shields.io/badge/Swift 3-compatible-4BC51D.svg?style=flat-square)
 
 Device detect the current  device model and screen size.
 
@@ -15,7 +15,7 @@ Device is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Device", '~> 1.0.0'
+pod "Device", '~> 2.0.0'
 ```
 
 ## Carthage
@@ -32,7 +32,7 @@ $ brew install carthage
 To integrate Device into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ekhoo/Device" ~> 1.0.0
+github "Ekhoo/Device" ~> 2.0.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
@@ -89,11 +89,14 @@ func myFunc() {
 func myFunc() {
         /*** Display the device screen size ***/
         switch Device.size() {
-            case .Screen3_5Inch: print("It's a 3.5 inch screen")
-            case .Screen4Inch:   print("It's a 4 inch screen")
-            case .Screen4_7Inch: print("It's a 4.7 inch screen")
-            case .Screen5_5Inch: print("It's a 5.5 inch screen")
-            default:             print("Unknown size")
+            case .Screen3_5Inch:  print("It's a 3.5 inch screen")
+            case .Screen4Inch:    print("It's a 4 inch screen")
+            case .Screen4_7Inch:  print("It's a 4.7 inch screen")
+            case .Screen5_5Inch:  print("It's a 5.5 inch screen")
+            case .Screen7_9Inch:  print("It's a 7.9 inch screen")
+            case .Screen9_7Inch:  print("It's a 9.7 inch screen")
+            case .Screen12_9Inch: print("It's a 12.9 inch screen")
+            default:              print("Unknown size")
         }
 }
 ```
@@ -149,7 +152,11 @@ func myFunc() {
         if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
             print("Your device screen is smaller than 4.7 inch")
         }
-		
+
+        if Device.isRetina() {
+            print("It's a retina display")
+        }
+        
 }
 ```
 

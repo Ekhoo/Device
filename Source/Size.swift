@@ -7,9 +7,12 @@
 //
 
 public enum Size: Int {
-    case UnknownSize = 0
-    case Screen3_5Inch
-    case Screen4Inch
-    case Screen4_7Inch
-    case Screen5_5Inch
+    case unknownSize = 0
+    case screen3_5Inch
+    case screen4Inch
+    case screen4_7Inch
+    case screen5_5Inch
+    case screen7_9Inch
+    case screen9_7Inch
+    case screen12_9Inch
 }

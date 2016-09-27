@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class Device {
-    static private func getVersionCode() -> String {
+open class Device {
+    static fileprivate func getVersionCode() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
         
-        let versionCode: String = String(UTF8String: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: NSASCIIStringEncoding)!.UTF8String)!
+        let versionCode: String = String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
         
         return versionCode
     }
     
-    static private func getVersion(code code: String) -> Version {
+    static fileprivate func getVersion(code: String) -> Version {
         switch code {
             /*** iPhone ***/
             case "iPhone3,1", "iPhone3,2", "iPhone3,3":      return Version.iPhone4
@@ -31,7 +31,9 @@ public class Device {
             case "iPhone8,1":                                return Version.iPhone6S
             case "iPhone8,2":                                return Version.iPhone6SPlus
             case "iPhone8,4":                                return Version.iPhoneSE
-            
+            case "iPhone9,1", "iPhone9,3":                   return Version.iPhone7
+            case "iPhone9,2", "iPhone9,4":                   return Version.iPhone7Plus
+
             /*** iPad ***/
             case "iPad1,1":                                  return Version.iPad1
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return Version.iPad2
@@ -60,7 +62,7 @@ public class Device {
         }
     }
     
-    static private func getType(code code: String) -> Type {
+    static fileprivate func getType(code: String) -> Type {
         let versionCode = Device.getVersionCode()
         
         switch versionCode {
@@ -73,7 +75,9 @@ public class Device {
             "iPhone7,1",
             "iPhone8,1",
             "iPhone8,2",
-            "iPhone8,4":                                    return Type.iPhone
+            "iPhone8,4",
+            "iPhone9,1", "iPhone9,3",
+            "iPhone9,2", "iPhone9,4":                       return Type.iPhone
 
             case "iPad1,1",
             "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4",
@@ -100,63 +104,76 @@ public class Device {
     }
 
     
-    static public func version() -> Version {
+    static open func version() -> Version {
         let versionName = Device.getVersionCode()
         
         return Device.getVersion(code: versionName)
     }
     
-    static public func size() -> Size {
-        let w: Double = Double(CGRectGetWidth(UIScreen.mainScreen().bounds))
-        let h: Double = Double(CGRectGetHeight(UIScreen.mainScreen().bounds))
+    static open func size() -> Size {
+        let w: Double = Double(UIScreen.main.bounds.width)
+        let h: Double = Double(UIScreen.main.bounds.height)
         let screenHeight: Double = max(w, h)
         
         switch screenHeight {
             case 480:
-                return Size.Screen3_5Inch
+                return Size.screen3_5Inch
             case 568:
-                return Size.Screen4Inch
+                return Size.screen4Inch
             case 667:
-                return UIScreen.mainScreen().scale == 3.0 ? Size.Screen5_5Inch : Size.Screen4_7Inch
+                return UIScreen.main.scale == 3.0 ? Size.screen5_5Inch : Size.screen4_7Inch
             case 736:
-                return Size.Screen5_5Inch
+                return Size.screen5_5Inch
+            case 1024:
+                switch Device.version() {
+                    case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
+                        return Size.screen7_9Inch
+                    default:
+                        return Size.screen9_7Inch
+                }
+            case 1366:
+                return Size.screen12_9Inch
             default:
-                return Size.UnknownSize
+                return Size.unknownSize
         }
     }
     
-    static public func type() -> Type {
+    static open func type() -> Type {
         let versionName = Device.getVersionCode()
         
         return Device.getType(code: versionName)
     }
     
-    static public func isEqualToScreenSize(size: Size) -> Bool {
+    static open func isEqualToScreenSize(_ size: Size) -> Bool {
         return size == Device.size() ? true : false;
     }
     
-    static public func isLargerThanScreenSize(size: Size) -> Bool {
+    static open func isLargerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue < Device.size().rawValue ? true : false;
     }
     
-    static public func isSmallerThanScreenSize(size: Size) -> Bool {
+    static open func isSmallerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue > Device.size().rawValue ? true : false;
     }
     
-    static public func isPad() -> Bool {
+    static open func isRetina() -> Bool {
+        return UIScreen.main.scale > 1.0
+    }
+
+    static open func isPad() -> Bool {
         return Device.type() == .iPad
     }
     
-    static public func isPhone() -> Bool {
+    static open func isPhone() -> Bool {
         return Device.type() == .iPhone
         
     }
     
-    static public func isPod() -> Bool {
+    static open func isPod() -> Bool {
         return Device.type() == .iPod
     }
     
-    static public func isSimulator() -> Bool {
+    static open func isSimulator() -> Bool {
         return Device.type() == .Simulator
     }
     
