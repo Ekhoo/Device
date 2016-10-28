@@ -8,17 +8,17 @@
 
 import UIKit
 
-open class Device {
-    static fileprivate func getVersionCode() -> String {
+public class Device {
+    static private func getVersionCode() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
-        
-        let versionCode: String = String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
+
+        let versionCode: String = String(UTF8String: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: NSASCIIStringEncoding)!.UTF8String)!
         
         return versionCode
     }
     
-    static fileprivate func getVersion(code: String) -> Version {
+    static private func getVersion(code: String) -> Version {
         switch code {
             /*** iPhone ***/
             case "iPhone3,1", "iPhone3,2", "iPhone3,3":      return Version.iPhone4
@@ -62,7 +62,7 @@ open class Device {
         }
     }
     
-    static fileprivate func getType(code: String) -> Type {
+    static private func getType(code: String) -> Type {
         let versionCode = Device.getVersionCode()
         
         switch versionCode {
@@ -104,15 +104,15 @@ open class Device {
     }
 
     
-    static open func version() -> Version {
+    static public func version() -> Version {
         let versionName = Device.getVersionCode()
         
-        return Device.getVersion(code: versionName)
+        return Device.getVersion(versionName)
     }
     
-    static open func size() -> Size {
-        let w: Double = Double(UIScreen.main.bounds.width)
-        let h: Double = Double(UIScreen.main.bounds.height)
+    static public func size() -> Size {
+        let w: Double = Double(UIScreen.mainScreen().bounds.width)
+        let h: Double = Double(UIScreen.mainScreen().bounds.height)
         let screenHeight: Double = max(w, h)
         
         switch screenHeight {
@@ -121,7 +121,8 @@ open class Device {
             case 568:
                 return Size.screen4Inch
             case 667:
-                return UIScreen.main.scale == 3.0 ? Size.screen5_5Inch : Size.screen4_7Inch
+                return UIScreen.mainScreen()
+                    .scale == 3.0 ? Size.screen5_5Inch : Size.screen4_7Inch
             case 736:
                 return Size.screen5_5Inch
             case 1024:
@@ -138,42 +139,42 @@ open class Device {
         }
     }
     
-    static open func type() -> Type {
+    static public func type() -> Type {
         let versionName = Device.getVersionCode()
         
-        return Device.getType(code: versionName)
+        return Device.getType(versionName)
     }
     
-    static open func isEqualToScreenSize(_ size: Size) -> Bool {
+    static public func isEqualToScreenSize(size: Size) -> Bool {
         return size == Device.size() ? true : false;
     }
     
-    static open func isLargerThanScreenSize(_ size: Size) -> Bool {
+    static public func isLargerThanScreenSize(size: Size) -> Bool {
         return size.rawValue < Device.size().rawValue ? true : false;
     }
     
-    static open func isSmallerThanScreenSize(_ size: Size) -> Bool {
+    static public func isSmallerThanScreenSize(size: Size) -> Bool {
         return size.rawValue > Device.size().rawValue ? true : false;
     }
     
-    static open func isRetina() -> Bool {
-        return UIScreen.main.scale > 1.0
+    static public func isRetina() -> Bool {
+        return UIScreen.mainScreen().scale > 1.0
     }
 
-    static open func isPad() -> Bool {
+    static public func isPad() -> Bool {
         return Device.type() == .iPad
     }
     
-    static open func isPhone() -> Bool {
+    static public func isPhone() -> Bool {
         return Device.type() == .iPhone
         
     }
     
-    static open func isPod() -> Bool {
+    static public func isPod() -> Bool {
         return Device.type() == .iPod
     }
     
-    static open func isSimulator() -> Bool {
+    static public func isSimulator() -> Bool {
         return Device.type() == .Simulator
     }
     
