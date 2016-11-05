@@ -177,4 +177,11 @@ open class Device {
         return Device.type() == .Simulator
     }
     
+    //MARK: - Device Capabilities
+    static open func canMakePhoneCall() -> Bool {
+        return UIApplication.shared.canOpenURL(URL(string:"telprompt://")!)
+    }
+    
+    
+    
 }
