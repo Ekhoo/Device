@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 open class Device {
     static fileprivate func getVersionCode() -> String {
@@ -181,7 +182,11 @@ open class Device {
     static open func canMakePhoneCall() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:"telprompt://")!)
     }
-    
+
+    static open func canSendMail() -> Bool {
+        return MFMailComposeViewController.canSendMail()
+    }
+
     
     
 }
