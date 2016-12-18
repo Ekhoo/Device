@@ -115,15 +115,15 @@ open class Device {
     }
     
     static open func isEqualToScreenSize(_ size: Size) -> Bool {
-        return size == size() ? true : false;
+        return size == self.size() ? true : false;
     }
     
     static open func isLargerThanScreenSize(_ size: Size) -> Bool {
-        return size.rawValue < size().rawValue ? true : false;
+        return size.rawValue < self.size().rawValue ? true : false;
     }
     
     static open func isSmallerThanScreenSize(_ size: Size) -> Bool {
-        return size.rawValue > size().rawValue ? true : false;
+        return size.rawValue > self.size().rawValue ? true : false;
     }
     
     static open func isRetina() -> Bool {
