@@ -66,15 +66,15 @@ open class Device {
         let versionCode = getVersionCode()
         
         if versionCode.contains("iPhone") {
-            return Type.iPhone
+            return .iPhone
         } else if versionCode.contains("iPad") {
-            return Type.iPad
+            return .iPad
         } else if versionCode.contains("iPod") {
-            return Type.iPod
+            return .iPod
         } else if versionCode == "i386" || versionCode == "x86_64" {
-            return Type.Simulator
+            return .Simulator
         } else {
-            return Type.Unknown
+            return .Unknown
         }
     }
 
