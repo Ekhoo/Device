@@ -90,24 +90,24 @@ open class Device {
         
         switch screenHeight {
             case 480:
-                return Size.screen3_5Inch
+                return .screen3_5Inch
             case 568:
-                return Size.screen4Inch
+                return .screen4Inch
             case 667:
-                return UIScreen.main.scale == 3.0 ? Size.screen5_5Inch : Size.screen4_7Inch
+                return UIScreen.main.scale == 3.0 ? .screen5_5Inch : .screen4_7Inch
             case 736:
-                return Size.screen5_5Inch
+                return .screen5_5Inch
             case 1024:
                 switch version() {
                     case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
-                        return Size.screen7_9Inch
+                        return .screen7_9Inch
                     default:
-                        return Size.screen9_7Inch
+                        return .screen9_7Inch
                 }
             case 1366:
-                return Size.screen12_9Inch
+                return .screen12_9Inch
             default:
-                return Size.unknownSize
+                return .unknownSize
         }
     }
     
