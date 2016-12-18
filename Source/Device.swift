@@ -56,9 +56,9 @@ open class Device {
             case "iPod7,1":                                  return .iPodTouch6Gen
             
             /*** Simulator ***/
-            case "i386", "x86_64":                           return .Simulator
+            case "i386", "x86_64":                           return .simulator
 
-            default:                                         return .Unknown
+            default:                                         return .unknown
         }
     }
     
@@ -72,13 +72,12 @@ open class Device {
         } else if versionCode.contains("iPod") {
             return .iPod
         } else if versionCode == "i386" || versionCode == "x86_64" {
-            return .Simulator
+            return .simulator
         } else {
-            return .Unknown
+            return .unknown
         }
     }
 
-    
     static open func version() -> Version {
         return getVersion(code: getVersionCode())
     }
@@ -137,7 +136,6 @@ open class Device {
     
     static open func isPhone() -> Bool {
         return type() == .iPhone
-        
     }
     
     static open func isPod() -> Bool {
@@ -145,7 +143,7 @@ open class Device {
     }
     
     static open func isSimulator() -> Bool {
-        return type() == .Simulator
+        return type() == .simulator
     }
     
 }
