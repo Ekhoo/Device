@@ -63,7 +63,7 @@ open class Device {
     }
     
     static fileprivate func getType(code: String) -> Type {
-        let versionCode = Device.getVersionCode()
+        let versionCode = getVersionCode()
         
         if versionCode.contains("iPhone") {
             return Type.iPhone
@@ -80,9 +80,7 @@ open class Device {
 
     
     static open func version() -> Version {
-        let versionName = Device.getVersionCode()
-        
-        return Device.getVersion(code: versionName)
+        return getVersion(code: getVersionCode())
     }
     
     static open func size() -> Size {
@@ -100,7 +98,7 @@ open class Device {
             case 736:
                 return Size.screen5_5Inch
             case 1024:
-                switch Device.version() {
+                switch version() {
                     case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
                         return Size.screen7_9Inch
                     default:
@@ -114,21 +112,19 @@ open class Device {
     }
     
     static open func type() -> Type {
-        let versionName = Device.getVersionCode()
-        
-        return Device.getType(code: versionName)
+        return getType(code: getVersionCode())
     }
     
     static open func isEqualToScreenSize(_ size: Size) -> Bool {
-        return size == Device.size() ? true : false;
+        return size == size() ? true : false;
     }
     
     static open func isLargerThanScreenSize(_ size: Size) -> Bool {
-        return size.rawValue < Device.size().rawValue ? true : false;
+        return size.rawValue < size().rawValue ? true : false;
     }
     
     static open func isSmallerThanScreenSize(_ size: Size) -> Bool {
-        return size.rawValue > Device.size().rawValue ? true : false;
+        return size.rawValue > size().rawValue ? true : false;
     }
     
     static open func isRetina() -> Bool {
@@ -136,20 +132,20 @@ open class Device {
     }
 
     static open func isPad() -> Bool {
-        return Device.type() == .iPad
+        return type() == .iPad
     }
     
     static open func isPhone() -> Bool {
-        return Device.type() == .iPhone
+        return type() == .iPhone
         
     }
     
     static open func isPod() -> Bool {
-        return Device.type() == .iPod
+        return type() == .iPod
     }
     
     static open func isSimulator() -> Bool {
-        return Device.type() == .Simulator
+        return type() == .Simulator
     }
     
 }
