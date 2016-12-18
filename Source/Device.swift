@@ -118,15 +118,18 @@ open class Device {
         
         return Device.getType(code: versionName)
     }
-    
+
+    @available(*, deprecated, message: "use == operator instead")
     static open func isEqualToScreenSize(_ size: Size) -> Bool {
         return size == Device.size() ? true : false;
     }
-    
+
+    @available(*, deprecated, message: "use > operator instead")
     static open func isLargerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue < Device.size().rawValue ? true : false;
     }
-    
+
+    @available(*, deprecated, message: "use < operator instead")
     static open func isSmallerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue > Device.size().rawValue ? true : false;
     }
