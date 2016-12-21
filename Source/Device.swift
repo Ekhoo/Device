@@ -96,7 +96,7 @@ open class Device {
             case 568:
                 return Size.screen4Inch
             case 667:
-                return UIScreen.main.scale == 3.0 ? Size.screen5_5Inch : Size.screen4_7Inch
+                return Size.screen4_7Inch
             case 736:
                 return Size.screen5_5Inch
             case 1024:
