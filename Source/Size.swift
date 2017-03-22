@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public enum Size: Int {
+public enum Size: Int, Comparable {
     case unknownSize = 0
     #if os(iOS)
     case screen3_5Inch
