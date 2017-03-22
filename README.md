@@ -56,18 +56,18 @@ func myFunc() {
             case .iPhone6SPlus:  print("It's an iPhone 6 S Plus")
 
             /*** iPad ***/
-            case .iPad1:         print("It's an iPad 1")
-            case .iPad2:         print("It's an iPad 2")
-            case .iPad3:         print("It's an iPad 3")
-            case .iPad4:         print("It's an iPad 4")
-            case .iPadAir:       print("It's an iPad Air")
-            case .iPadAir2:      print("It's an iPad Air 2")
-            case .iPadMini:      print("It's an iPad Mini")
-            case .iPadMini2:     print("It's an iPad Mini 2")
-            case .iPadMini3:     print("It's an iPad Mini 3")
-            case .iPadMini4:     print("It's an iPad Mini 4")
-            case .iPadPro129Inch:       print("It's an iPad Pro 12.9inch")
-            case .iPadPro97Inch:       print("It's an iPad Pro 9.7inch")
+            case .iPad1:           print("It's an iPad 1")
+            case .iPad2:           print("It's an iPad 2")
+            case .iPad3:           print("It's an iPad 3")
+            case .iPad4:           print("It's an iPad 4")
+            case .iPadAir:         print("It's an iPad Air")
+            case .iPadAir2:        print("It's an iPad Air 2")
+            case .iPadMini:        print("It's an iPad Mini")
+            case .iPadMini2:       print("It's an iPad Mini 2")
+            case .iPadMini3:       print("It's an iPad Mini 3")
+            case .iPadMini4:       print("It's an iPad Mini 4")
+            case .iPadPro9_7Inch:  print("It's an iPad Pro 9.7 Inch")
+            case .iPadPro12_9Inch: print("It's an iPad Pro 12.9 Inch")
 
             /*** iPod ***/
             case .iPodTouch1Gen: print("It's a iPod touch generation 1")
@@ -170,5 +170,4 @@ Lucas Ortis:
 
 # License
 
-Inspired from [SDVersion](https://github.com/sebyddd/SDVersion/).
 Device is available under the MIT license. See the LICENSE file for more info.
