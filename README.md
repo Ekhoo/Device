@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
 [![License](https://img.shields.io/cocoapods/l/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
 [![Platform](https://img.shields.io/cocoapods/p/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
-![](https://img.shields.io/badge/Supported-iOS8-4BC51D.svg?style=flat-square)
+![](https://img.shields.io/badge/Supported-iOS8%20%7C%20OSX%2010.10-4BC51D.svg?style=flat-square)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![](https://img.shields.io/badge/Swift-3.0.2-orange.svg?style=flat)
 [![Twitter](https://img.shields.io/badge/Twitter-@LucasEkhoo-blue.svg?style=flat)](http://twitter.com/LucasEkhoo)
