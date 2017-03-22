@@ -51,10 +51,10 @@ class ViewController: UIViewController {
             case .iPodTouch5Gen: print("It's a iPod touch generation 5")
             case .iPodTouch6Gen: print("It's a iPod touch generation 6")
             
-            /*** Simulator ***/
-            case .Simulator:    print("It's a Simulator")
+            /*** simulator ***/
+            case .simulator:    print("It's a Simulator")
             
-            /*** Unknown ***/
+            /*** unknown ***/
             default:            print("It's an unknown device")
         }
         
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             case .iPod:         print("It's an iPod")
             case .iPhone:       print("It's an iPhone")
             case .iPad:         print("It's an iPad")
-            case .Simulator:    print("It's a Simulated device")
+            case .simulator:    print("It's a simulated device")
             default:            print("Unknown device type")
         }
         
