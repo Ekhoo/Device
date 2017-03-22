@@ -39,7 +39,8 @@ github "Ekhoo/Device" ~> 2.1.0
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
 
 # Usage
-## Device version
+## iOS
+### Device version
 ```swift
 func myFunc() {
         /*** Display the device version ***/
@@ -139,6 +140,38 @@ func myFunc() {
 
 ```
 
+## Mac
+### Mac version
+```swift
+func myFunc() {
+        /*** Display the mac version ***/
+        switch Device.type() {
+            case .iMac:         print("It's an iMac")
+            case .macBook:      print("It's a MacBook")
+            case .macBookAir:   print("It's a MacBook Air")
+            case .macBookPro:   print("It's a MacBook Pro")
+            default:            print("Unknown device type")
+        }
+    }
+```
+
+## Mac screen size
+```swift
+func myFunc() {
+        /*** Display the mac screen size ***/
+        switch Device.size() {
+            case .screen11Inch:     print("It's a 11 inch screen")
+            case .screen12Inch:     print("It's a 12 inch screen")
+            case .screen13Inch:     print("It's a 13 inch screen")
+            case .screen15Inch:     print("It's a 15 inch screen")
+            case .screen17Inch:     print("It's a 17 inch screen")
+            case .screen21_5Inch:   print("It's a 21.5 inch screen")
+            case .screen27Inch:     print("It's a 27 inch screen")
+            default:                print("Unknown size")
+        }
+}
+```
+
 ## Helpers
 ```swift
 func myFunc() {
@@ -153,6 +186,18 @@ func myFunc() {
 
         if Device.size() < Size.screen4_7Inch {
             print("Your device screen is smaller than 4.7 inch")
+        }
+
+        if Device.size() == Size.screen27Inch {
+            print("It's a 27 inch screen")
+        }
+        
+        if Device.size() > Size.screen15Inch {
+            print("Your mac screen is larger than 15 inch")
+        }
+        
+        if Device.size() < Size.screen15Inch {
+            print("Your mac screen is smaller than 15 inch")
         }
 
         if Device.isRetina() {
