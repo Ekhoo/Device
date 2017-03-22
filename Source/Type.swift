@@ -14,12 +14,12 @@ public enum Type: String {
     case simulator
     #elseif os(OSX)
     case iMac
-    case MacMini
-    case MacPro
-    case MacBook
-    case MacBookAir
-    case MacBookPro
-    case Xserve
+    case macMini
+    case macPro
+    case macBook
+    case macBookAir
+    case macBookPro
+    case xserve
     #endif
     case unknown
 }

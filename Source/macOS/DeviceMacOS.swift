@@ -20,21 +20,21 @@ public class Device {
     static private func getType(code: String) -> Type {
         let versionCode = Device.getVersionCode()
         if versionCode.hasPrefix("MacPro") {
-            return Type.MacPro
+            return Type.macPro
         } else if versionCode.hasPrefix("iMac") {
             return Type.iMac
         } else if versionCode.hasPrefix("MacBookPro") {
-            return Type.MacBookPro
+            return Type.macBookPro
         } else if versionCode.hasPrefix("MacBookAir") {
-            return Type.MacBookAir
+            return Type.macBookAir
         } else if versionCode.hasPrefix("MacBook") {
-            return Type.MacBook
+            return Type.macBook
         } else if versionCode.hasPrefix("MacMini") {
-            return Type.MacMini
+            return Type.macMini
         } else if versionCode.hasPrefix("Xserve") {
-            return Type.Xserve
+            return Type.xserve
         }
-        return Type.Unknown
+        return Type.unknown
     }
     
     private static func sizeInInches() -> CGFloat {

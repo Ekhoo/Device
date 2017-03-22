@@ -15,9 +15,9 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         switch Device.type() {
         case .iMac:         print("It's an iMac")
-        case .MacBook:      print("It's a MacBook")
-        case .MacBookAir:   print("It's a MacBook Air")
-        case .MacBookPro:   print("It's a MacBook Pro")        
+        case .macBook:      print("It's a MacBook")
+        case .macBookAir:   print("It's a MacBook Air")
+        case .macBookPro:   print("It's a MacBook Pro")
         default:            print("Unknown device type")
         }
 
