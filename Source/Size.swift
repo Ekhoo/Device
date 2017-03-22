@@ -6,8 +6,9 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public enum Size: Int, Comparable {
+public enum Size: Int {
     case unknownSize = 0
+    #if os(iOS)
     case screen3_5Inch
     case screen4Inch
     case screen4_7Inch
@@ -15,6 +16,17 @@ public enum Size: Int, Comparable {
     case screen7_9Inch
     case screen9_7Inch
     case screen12_9Inch
+    #elseif os(OSX)
+    case screen11Inch
+    case screen12Inch
+    case screen13Inch
+    case screen15Inch
+    case screen17Inch
+    case screen20Inch
+    case screen21_5Inch
+    case screen24Inch
+    case screen27Inch
+    #endif
 }
 
 public func <(lhs: Size, rhs: Size) -> Bool {
