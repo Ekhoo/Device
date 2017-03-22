@@ -142,15 +142,15 @@ func myFunc() {
 ```swift
 func myFunc() {
         /*** Helpers ***/
-        if Device.isEqualToScreenSize(Size.Screen4Inch) {
+        if Device.size() == Size.screen4Inch {
             print("It's a 4 inch screen")
         }
 
-        if Device.isLargerThanScreenSize(Size.Screen4_7Inch) {
+        if Device.size() > Size.screen4_7Inch {
             print("Your device screen is larger than 4.7 inch")
         }
 
-        if Device.isSmallerThanScreenSize(Size.Screen4_7Inch) {
+        if Device.size() < Size.screen4_7Inch {
             print("Your device screen is smaller than 4.7 inch")
         }
 
