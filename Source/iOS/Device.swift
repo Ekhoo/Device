@@ -39,6 +39,7 @@ open class Device {
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return Version.iPad2
             case "iPad3,1", "iPad3,2", "iPad3,3":            return Version.iPad3
             case "iPad3,4", "iPad3,5", "iPad3,6":            return Version.iPad4
+            case "iPad6,11", "iPad6,12":                     return Version.iPad5
             case "iPad4,1", "iPad4,2", "iPad4,3":            return Version.iPadAir
             case "iPad5,3", "iPad5,4":                       return Version.iPadAir2
             case "iPad2,5", "iPad2,6", "iPad2,7":            return Version.iPadMini
