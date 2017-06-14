@@ -46,7 +46,8 @@ open class Device {
             case "iPad4,4", "iPad4,5", "iPad4,6":            return Version.iPadMini2
             case "iPad4,7", "iPad4,8", "iPad4,9":            return Version.iPadMini3
             case "iPad5,1", "iPad5,2":                       return Version.iPadMini4
-            case "iPad6,7", "iPad6,8":                       return Version.iPadPro12_9Inch
+            case "iPad6,7", "iPad6,8", "iPad7,1", "iPad7,2": return Version.iPadPro12_9Inch
+            case "iPad7,3", "iPad7,4":                       return Version.iPadPro10_5Inch
             case "iPad6,3", "iPad6,4":                       return Version.iPadPro9_7Inch
             
             /*** iPod ***/
@@ -102,6 +103,8 @@ open class Device {
                 switch version() {
                     case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
                         return .screen7_9Inch
+                    case .iPadPro10_5Inch:
+                        return .screen10_5Inch
                     default:
                         return .screen9_7Inch
                 }
