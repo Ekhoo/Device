@@ -97,6 +97,7 @@ func myFunc() {
             case .Screen4Inch:    print("It's a 4 inch screen")
             case .Screen4_7Inch:  print("It's a 4.7 inch screen")
             case .Screen5_5Inch:  print("It's a 5.5 inch screen")
+            case .screen5_8Inch:  print("It's a 5.8 inch screen")
             case .Screen7_9Inch:  print("It's a 7.9 inch screen")
             case .Screen9_7Inch:  print("It's a 9.7 inch screen")
             case .Screen12_9Inch: print("It's a 12.9 inch screen")
