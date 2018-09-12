@@ -36,7 +36,10 @@ open class Device {
             case "iPhone10,1", "iPhone10,4":                 return .iPhone8
             case "iPhone10,2", "iPhone10,5":                 return .iPhone8Plus
             case "iPhone10,3", "iPhone10,6":                 return .iPhoneX
-            
+            //TODO: - to check! https://www.theiphonewiki.com/wiki/Models
+            case "iPhone11,1", "iPhone11,4":                 return .iPhoneXS
+            case "iPhone11,2", "iPhone11,5":                 return .iPhoneXSMax
+            case "iPhone11,3", "iPhone11,6":                 return .iPhoneXR
 
             /*** iPad ***/
             case "iPad1,1":                                  return Version.iPad1
@@ -105,6 +108,8 @@ open class Device {
                 return .screen5_5Inch
             case 812:
                 return .screen5_8Inch
+            case 896:
+                return UIScreen.main.scale == 3.0 ? .screen6_5Inch : .screen6_1Inch
             case 1024:
                 switch version() {
                     case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
