@@ -37,9 +37,9 @@ open class Device {
             case "iPhone10,2", "iPhone10,5":                 return .iPhone8Plus
             case "iPhone10,3", "iPhone10,6":                 return .iPhoneX
             //TODO: - to check! https://www.theiphonewiki.com/wiki/Models
-            case "iPhone11,1", "iPhone11,4":                 return .iPhoneXS
-            case "iPhone11,2", "iPhone11,5":                 return .iPhoneXSMax
-            case "iPhone11,3", "iPhone11,6":                 return .iPhoneXR
+            case "iPhone11,1", "iPhone11,2":                 return .iPhoneXS
+            case "iPhone11,3", "iPhone11,4", "iPhone11,6":   return .iPhoneXSMax
+            case "iPhone11,5", "iPhone11,8":                 return .iPhoneXR
 
             /*** iPad ***/
             case "iPad1,1":                                  return Version.iPad1
