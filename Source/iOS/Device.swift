@@ -88,11 +88,11 @@ open class Device {
         }
     }
 
-    static open func version() -> Version {
+    static public func version() -> Version {
         return getVersion(code: getVersionCode())
     }
     
-    static open func size() -> Size {
+    static public func size() -> Size {
         let w: Double = Double(UIScreen.main.bounds.width)
         let h: Double = Double(UIScreen.main.bounds.height)
         let screenHeight: Double = max(w, h)
@@ -128,42 +128,42 @@ open class Device {
         }
     }
     
-    static open func type() -> Type {
+    static public func type() -> Type {
         return getType(code: getVersionCode())
     }
 
     @available(*, deprecated, message: "use == operator instead")
-    static open func isEqualToScreenSize(_ size: Size) -> Bool {
+    static public func isEqualToScreenSize(_ size: Size) -> Bool {
         return size == self.size() ? true : false;
     }
 
     @available(*, deprecated, message: "use > operator instead")
-    static open func isLargerThanScreenSize(_ size: Size) -> Bool {
+    static public func isLargerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue < self.size().rawValue ? true : false;
     }
 
     @available(*, deprecated, message: "use < operator instead")
-    static open func isSmallerThanScreenSize(_ size: Size) -> Bool {
+    static public func isSmallerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue > self.size().rawValue ? true : false;
     }
     
-    static open func isRetina() -> Bool {
+    static public func isRetina() -> Bool {
         return UIScreen.main.scale > 1.0
     }
 
-    static open func isPad() -> Bool {
+    static public func isPad() -> Bool {
         return type() == .iPad
     }
     
-    static open func isPhone() -> Bool {
+    static public func isPhone() -> Bool {
         return type() == .iPhone
     }
     
-    static open func isPod() -> Bool {
+    static public func isPod() -> Bool {
         return type() == .iPod
     }
     
-    static open func isSimulator() -> Bool {
+    static public func isSimulator() -> Bool {
         return type() == .simulator
     }
     
