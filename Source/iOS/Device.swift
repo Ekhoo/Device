@@ -189,9 +189,13 @@ open class Device {
     
     /// only  Device.strictMode = true
     static public func isSimulator() -> Bool {
+        let temp = Device.strictMode
+        Device.strictMode = true
         if case .simulator = type() {
+            Device.strictMode = temp
             return true
         }
+        Device.strictMode = temp
         return false
     }
     
