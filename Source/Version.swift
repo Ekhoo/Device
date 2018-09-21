@@ -6,7 +6,11 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public enum Version: String {
+public  enum Version {
+    
+    public typealias RawValue = String
+    
+    
     /*** iPhone ***/
     case iPhone4
     case iPhone4S
@@ -52,8 +56,9 @@ public enum Version: String {
     case iPodTouch5Gen
     case iPodTouch6Gen
     
-    /*** simulator ***/
-    case simulator
+    /// simulator
+    /// - only  Device.strictMode = true
+    indirect case simulator(Version)
     
     /*** unknown ***/
     case unknown

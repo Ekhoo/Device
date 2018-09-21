@@ -6,13 +6,19 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public enum Type: String {
+
+public enum Type {
+    public typealias RawValue = String
+    
     #if os(iOS)
     case iPhone
     case iPad
     case iPod
-    case simulator
+    /// only  Device.strictMode = true
+    indirect  case simulator(Type)
+
     #elseif os(OSX)
+    
     case iMac
     case macMini
     case macPro
