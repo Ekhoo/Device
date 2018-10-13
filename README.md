@@ -223,6 +223,9 @@ func myFunc() {
 }
 ```
 
+## Extensions
+* [DeviceLayout](https://github.com/cruisediary/DeviceLayout) - 📱AutoLayout can be set differently for each device
+
 # Author
 Lucas Ortis:
 - me@lucas-ortis.com
