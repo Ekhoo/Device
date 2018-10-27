@@ -74,15 +74,13 @@ open class Device {
     }
     
     static fileprivate func getType(code: String) -> Type {
-        let versionCode = getVersionCode()
-        
-        if versionCode.contains("iPhone") {
+        if code.contains(Type.iPhone.rawValue) {
             return .iPhone
-        } else if versionCode.contains("iPad") {
+        } else if code.contains(Type.iPad.rawValue) {
             return .iPad
-        } else if versionCode.contains("iPod") {
+        } else if code.contains(Type.iPod.rawValue) {
             return .iPod
-        } else if versionCode == "i386" || versionCode == "x86_64" {
+        } else if code == "i386" || code == "x86_64" {
             return .simulator
         } else {
             return .unknown

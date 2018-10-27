@@ -18,20 +18,19 @@ public class Device {
     }
 
     static private func getType(code: String) -> Type {
-        let versionCode = Device.getVersionCode()
-        if versionCode.hasPrefix("MacPro") {
+        if code.hasPrefix("MacPro") {
             return Type.macPro
-        } else if versionCode.hasPrefix("iMac") {
+        } else if code.hasPrefix("iMac") {
             return Type.iMac
-        } else if versionCode.hasPrefix("MacBookPro") {
+        } else if code.hasPrefix("MacBookPro") {
             return Type.macBookPro
-        } else if versionCode.hasPrefix("MacBookAir") {
+        } else if code.hasPrefix("MacBookAir") {
             return Type.macBookAir
-        } else if versionCode.hasPrefix("MacBook") {
+        } else if code.hasPrefix("MacBook") {
             return Type.macBook
-        } else if versionCode.hasPrefix("MacMini") {
+        } else if code.hasPrefix("MacMini") {
             return Type.macMini
-        } else if versionCode.hasPrefix("Xserve") {
+        } else if code.hasPrefix("Xserve") {
             return Type.xserve
         }
         return Type.unknown
