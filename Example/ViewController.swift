@@ -33,8 +33,8 @@ class ViewController: UIViewController {
             case .iPhone8Plus:   print("It's an iPhone 8 Plus")
             case .iPhoneX:       print("It's an iPhone X")
             case .iPhoneXS:      print("It's an iPhone Xs")
-            case .iPhoneXSMax:   print("It's an iPhone Xs Max")
-            case .iPhoneXR:      print("It's an iPhone Xʀ")
+            case .iPhoneXS_Max:  print("It's an iPhone Xs Max")
+            case .iPhoneXR:      print("It's an iPhone Xr")
             
             /*** iPad ***/
             case .iPad1:           print("It's an iPad 1")
