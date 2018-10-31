@@ -43,6 +43,8 @@ public enum Version: String {
     case iPadPro9_7Inch
     case iPadPro10_5Inch
     case iPadPro12_9Inch
+    case iPadPro11_0Inch
+    case iPadPro12_9Inch_3rd
     
     /*** iPod ***/
     case iPodTouch1Gen
