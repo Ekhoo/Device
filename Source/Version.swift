@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
-public  enum Version {
+public enum Version {
     
     public typealias RawValue = String
     

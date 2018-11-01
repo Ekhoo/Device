@@ -10,8 +10,11 @@ import UIKit
 
 open class Device {
     
+    /// strict mode as `Bool`, default is `false`
     public static var strictMode:Bool = false
 
+    /// get version code by device
+    /// - Returns: `String` like `iPhone11,8` code identifier.
     static fileprivate func getVersionCode() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -21,13 +24,17 @@ open class Device {
         return versionCode
     }
     
+    /// get version code by simulator
+    /// - Returns: `String` like `iPhone11,8` code identifier.
     static fileprivate func getVersionCodeBySimulator() -> String {
         let versionCode = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"]
         return versionCode ?? ""
     }
     
-  // NOTES: - sources identifiers coming from https://www.theiphonewiki.com/wiki/Models / https://ipsw.me/otas
-  
+    /// get device model version for code
+    /// - Note: sources identifiers coming from https://www.theiphonewiki.com/wiki/Models / https://ipsw.me/otas
+    /// - Parameter code: `String`
+    /// - Returns: `Version` device model version
     static fileprivate func getVersion(code: String) -> Version {
         switch code {
             /*** iPhone ***/
@@ -50,7 +57,6 @@ open class Device {
             case "iPhone11,4", "iPhone11,6":                    return .iPhoneXS_Max
             case "iPhone11,8":                                  return .iPhoneXR
 
-            
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                          return Version.iPad1
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":    return Version.iPad2
@@ -80,16 +86,19 @@ open class Device {
             
             /*** Simulator ***/
             case "i386", "x86_64":
-            
                 if Device.strictMode {
                     return .simulator(getVersion(code: getVersionCodeBySimulator()))
                 }
                 return getVersion(code: getVersionCodeBySimulator())
-        
+            
+            /*** Unknown ***/
             default: return .unknown
         }
     }
     
+    /// get type for code
+    /// - Paramter code: `String`
+    /// - Returns: `Type`
     static fileprivate func getType(code: String) -> Type {
         if code.contains("iPhone") {
             return .iPhone
@@ -107,10 +116,14 @@ open class Device {
         }
     }
     
+    /// version
+    /// - Returns: `Version`
     static public func version() -> Version {
         return getVersion(code: getVersionCode())
     }
     
+    /// size
+    /// - Returns: `Size`
     static public func size() -> Size {
         let w: Double = Double(UIScreen.main.bounds.width)
         let h: Double = Double(UIScreen.main.bounds.height)
@@ -149,29 +162,47 @@ open class Device {
         }
     }
     
+    /// type
+    /// - Returns: `Type`
     static public func type() -> Type {
         return getType(code: getVersionCode())
     }
 
+    /// is equal to screen size
+    /// - Important: deprecated, use == operator instead
+    /// - Parameter size: `Size`
+    /// - Returns: `Bool`
     @available(*, deprecated, message: "use == operator instead")
     static public func isEqualToScreenSize(_ size: Size) -> Bool {
         return size == self.size() ? true : false;
     }
 
+    /// is larger than screen size
+    /// - Important: deprecated, use > operator instead
+    /// - Parameter size: `Size`
+    /// - Returns: `Bool`
     @available(*, deprecated, message: "use > operator instead")
     static public func isLargerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue < self.size().rawValue ? true : false;
     }
 
+    /// is smaller than screen size
+    /// - Important: deprecated, use < operator instead
+    /// - Parameter size: `Size`
+    /// - Returns: `Bool`
     @available(*, deprecated, message: "use < operator instead")
     static public func isSmallerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue > self.size().rawValue ? true : false;
     }
     
+    /// is retina display
+    /// - Returns: `Bool`
     static public func isRetina() -> Bool {
         return UIScreen.main.scale > 1.0
     }
 
+    /// is pad
+    /// - Returns: `Bool`
     static public func isPad() -> Bool {
         if case .iPad = type() {
             return true
@@ -179,6 +210,8 @@ open class Device {
         return false
     }
     
+    /// is phone
+    /// - Returns: `Bool`
     static public func isPhone() -> Bool {
         if case .iPhone = type() {
             return true
@@ -186,6 +219,8 @@ open class Device {
         return false
     }
     
+    /// is pod
+    /// - Returns: `Bool`
     static public func isPod() -> Bool {
         if case .iPod = type() {
             return true
@@ -193,7 +228,9 @@ open class Device {
         return false
     }
     
-    /// only  Device.strictMode = true
+    /// is simulator
+    /// - Note: only for `Device.strictMode = true`
+    /// - Returns: `Bool`
     static public func isSimulator() -> Bool {
         let temp = Device.strictMode
         Device.strictMode = true
