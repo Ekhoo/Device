@@ -9,6 +9,9 @@
 import UIKit
 
 open class Device {
+    
+    public static var strictMode:Bool = false
+
     static fileprivate func getVersionCode() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -18,8 +21,13 @@ open class Device {
         return versionCode
     }
     
-    // NOTES: - sources identifiers coming from https://www.theiphonewiki.com/wiki/Models / https://ipsw.me/otas
+    static fileprivate func getVersionCodeBySimulator() -> String {
+        let versionCode = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"]
+        return versionCode ?? ""
+    }
     
+  // NOTES: - sources identifiers coming from https://www.theiphonewiki.com/wiki/Models / https://ipsw.me/otas
+  
     static fileprivate func getVersion(code: String) -> Version {
         switch code {
             /*** iPhone ***/
@@ -71,23 +79,29 @@ open class Device {
             case "iPod7,1":                                     return .iPodTouch6Gen
             
             /*** Simulator ***/
-            case "i386", "x86_64":                              return .simulator
-
-            default:                                            return .unknown
+            case "i386", "x86_64":
+            
+                if Device.strictMode {
+                    return .simulator(getVersion(code: getVersionCodeBySimulator()))
+                }
+                return getVersion(code: getVersionCodeBySimulator())
+        
+            default: return .unknown
         }
     }
     
     static fileprivate func getType(code: String) -> Type {
-        let versionCode = getVersionCode()
-        
-        if versionCode.contains("iPhone") {
+        if code.contains("iPhone") {
             return .iPhone
-        } else if versionCode.contains("iPad") {
+        } else if code.contains("iPad") {
             return .iPad
-        } else if versionCode.contains("iPod") {
+        } else if code.contains("iPod") {
             return .iPod
-        } else if versionCode == "i386" || versionCode == "x86_64" {
-            return .simulator
+        } else if code == "i386" || code == "x86_64" {
+            if Device.strictMode {
+                return .simulator(getType(code: getVersionCodeBySimulator()))
+            }
+            return getType(code: getVersionCodeBySimulator())
         } else {
             return .unknown
         }
@@ -159,19 +173,36 @@ open class Device {
     }
 
     static public func isPad() -> Bool {
-        return type() == .iPad
+        if case .iPad = type() {
+            return true
+        }
+        return false
     }
     
     static public func isPhone() -> Bool {
-        return type() == .iPhone
+        if case .iPhone = type() {
+            return true
+        }
+        return false
     }
     
     static public func isPod() -> Bool {
-        return type() == .iPod
+        if case .iPod = type() {
+            return true
+        }
+        return false
     }
     
+    /// only  Device.strictMode = true
     static public func isSimulator() -> Bool {
-        return type() == .simulator
+        let temp = Device.strictMode
+        Device.strictMode = true
+        if case .simulator = type() {
+            Device.strictMode = temp
+            return true
+        }
+        Device.strictMode = temp
+        return false
     }
     
 }

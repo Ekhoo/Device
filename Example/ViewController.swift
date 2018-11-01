@@ -63,7 +63,7 @@ class ViewController: UIViewController {
             case .iPodTouch6Gen: print("It's a iPod touch generation 6")
             
             /*** simulator ***/
-            case .simulator:    print("It's a Simulator")
+            case .simulator(let v):    print("It's a Simulator \(v)")
             
             /*** unknown ***/
             default:            print("It's an unknown device")
