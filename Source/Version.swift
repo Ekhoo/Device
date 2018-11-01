@@ -28,7 +28,7 @@ public  enum Version {
     case iPhone8Plus
     case iPhoneX
     case iPhoneXS
-    case iPhoneXSMax
+    case iPhoneXS_Max
     case iPhoneXR
     
     /*** iPad ***/
@@ -46,6 +46,7 @@ public  enum Version {
     case iPadMini4
     case iPadPro9_7Inch
     case iPadPro10_5Inch
+    case iPadPro11_0Inch
     case iPadPro12_9Inch
     
     /*** iPod ***/
