@@ -168,4 +168,12 @@ open class Device {
         return type() == .simulator
     }
     
+    static public func hasNotch() -> Bool {
+        switch version() {
+        case .iPhoneX, .iPhoneXS, .iPhoneXS_Max,.iPhoneXR:
+            return true
+        default:
+            return false
+        }
+    }
 }
