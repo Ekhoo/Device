@@ -110,7 +110,12 @@ open class Device {
             case 812:
                 return .screen5_8Inch
             case 896:
-                return UIScreen.main.scale == 3.0 ? .screen6_5Inch : .screen6_1Inch
+                switch version() {
+                case .iPhoneXS_Max:
+                    return .screen6_5Inch
+                default:
+                    return .screen6_1Inch
+                }
             case 1024:
                 switch version() {
                 case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4:
