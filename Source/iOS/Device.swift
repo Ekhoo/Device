@@ -93,6 +93,23 @@ open class Device {
         return getVersion(code: getVersionCode())
     }
     
+    static public func versionOnSimulator() -> Version {
+        let version = self.version()
+        if version == .simulator {
+            guard let modelIdentifier = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"] else {
+                return version
+            }
+            let simulatorVersion = getVersion(code: modelIdentifier);
+            if simulatorVersion != .unknown {
+                return simulatorVersion
+            }else{
+                return version
+            }
+        }else{
+            return version
+        }
+    }
+    
     static public func size() -> Size {
         let w: Double = Double(UIScreen.main.bounds.width)
         let h: Double = Double(UIScreen.main.bounds.height)
