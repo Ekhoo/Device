@@ -43,9 +43,14 @@ public enum Version: String {
     case iPadMini2
     case iPadMini3
     case iPadMini4
+
+    /*** iPadPro ***/
     case iPadPro9_7Inch
-    case iPadPro10_5Inch
     case iPadPro12_9Inch
+    case iPadPro10_5Inch
+    case iPadPro12_9Inch2
+    case iPadPro11_0Inch
+    case iPadPro12_9Inch3
     
     /*** iPod ***/
     case iPodTouch1Gen
