@@ -38,9 +38,9 @@ public class Device {
     }
     
     private static func sizeInInches() -> CGFloat {
-        let screen = NSScreen.main()
+        let screen = NSScreen.main
         let description = screen?.deviceDescription
-        let displayPhysicalSize = CGDisplayScreenSize(description?["NSScreenNumber"] as? CGDirectDisplayID ?? 0)
+        let displayPhysicalSize = CGDisplayScreenSize(description?[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? CGDirectDisplayID ?? 0)
         return floor(sqrt(pow(displayPhysicalSize.width, 2) + pow(displayPhysicalSize.height, 2)) * 0.0393701);
     }
 
