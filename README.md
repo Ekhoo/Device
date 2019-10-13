@@ -38,6 +38,18 @@ github "Ekhoo/Device" ~> 3.1.2
 
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
 
+## Swift Package Manager
+
+The Swift Package Manager is official Xcode dependencies manager. 
+
+You can plug in `Device` library by declaring it in the `Package.swift` file:
+
+```
+dependencies: [
+    .package(url: "https://github.com/Ekhoo/Device", from: "3.1.2")
+]
+```
+
 # Usage
 ## iOS
 ### Device version

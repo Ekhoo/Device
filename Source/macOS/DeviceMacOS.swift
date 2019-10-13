@@ -5,6 +5,7 @@
 //  Created by Tom Baranes on 16/08/16.
 //  Copyright © 2016 Ekhoo. All rights reserved.
 //
+#if os(OSX)
 
 import Cocoa
 
@@ -81,3 +82,5 @@ public class Device {
     }
 
 }
+
+#endif
