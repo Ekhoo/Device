@@ -135,7 +135,14 @@ open class Device {
                     return .screen9_7Inch
                 }
             case 1112:
-                return .screen10_5Inch
+                switch version() {
+                case .iPad7:
+                    return .screen10_2Inch
+                default:
+                    return .screen10_5Inch
+                }
+            case 1194:
+                return .screen11Inch
             case 1366:
                 return .screen12_9Inch
             default:
