@@ -16,5 +16,7 @@ Pod::Spec.new do |s|
   s.requires_arc            = true
   s.source_files            = "Source/*.swift"
   s.ios.source_files        = "Source/iOS/*.swift"
-  s.osx.source_files        = "Source/macOS/*.swift"  
+  s.osx.source_files        = "Source/macOS/*.swift"
+
+  s.swift_version = '5.0' 
 end

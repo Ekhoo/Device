@@ -597,6 +597,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Ekhoo.Device;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -647,6 +648,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Ekhoo.Device;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
