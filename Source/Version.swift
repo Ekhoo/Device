@@ -37,6 +37,7 @@ public enum Version: String {
     case iPad4
     case iPad5
     case iPad6
+    case iPad7
     case iPadAir
     case iPadAir2
     case iPadAir3
