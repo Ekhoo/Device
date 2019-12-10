@@ -13,9 +13,11 @@ open class Device {
         var systemInfo = utsname()
         uname(&systemInfo)
         
-        let versionCode: String = String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
+        if let versionCodeStr: NSString = NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue), let utf8CodeString = versionCodeStr.utf8String, let versionCode: String = String(validatingUTF8: utf8CodeString) {
+            return versionCode
+        }
         
-        return versionCode
+        return ""
     }
     
     static fileprivate func getVersion(code: String) -> Version {
