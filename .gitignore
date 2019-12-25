@@ -17,6 +17,13 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+# Swift Package Manager
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
+
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
@@ -31,3 +38,5 @@ DerivedData
 # Carthage/Checkouts
 
 Carthage/Build
+
+

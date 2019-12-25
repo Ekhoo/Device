@@ -6,6 +6,7 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 open class Device {
@@ -190,3 +191,4 @@ open class Device {
     }
     
 }
+#endif
