@@ -17,7 +17,7 @@ public class Device {
         return String.init(validatingUTF8: model) ?? ""
     }
 
-    static private func getType(code: String) -> Type {
+    static private func getType(by code: String) -> Type {
         let versionCode = Device.getVersionCode()
         if versionCode.hasPrefix("MacPro") {
             return Type.macPro
@@ -77,7 +77,7 @@ public class Device {
 
     static public func type() -> Type {
         let versionName = Device.getVersionCode()
-        return Device.getType(code: versionName)
+        return Device.getType(by: versionName)
     }
 
 }
