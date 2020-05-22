@@ -186,4 +186,78 @@ open class Device {
         return type() == .simulator
     }
     
+    static public func cpuInfo() -> (name: String, clock: String) {
+        switch version() {
+            case .iPodTouch5Gen:
+                return ("A5", "800 MHz")
+            case .iPodTouch6Gen:
+                return ("A8", "1.4 GHz")
+            case .iPhone4:
+                return ("A4", "800 MHz")
+            case .iPhone4S:
+                return ("A5", "800 MHz")
+            case .iPhone5,
+                 .iPhone5C:
+                return ("A6", "1.3 GHz")
+            case .iPhone5S:
+                return ("A7", "1.3 GHz")
+            case .iPhone6,
+                 .iPhone6Plus:
+                return ("A8", "1.4 GHz")
+            case .iPhone6S,
+                 .iPhone6SPlus,
+                 .iPhoneSE:
+                return ("A9", "1.85 GHz")
+            case .iPhone7,
+                 .iPhone7Plus:
+                return ("A10 Fusion", "2.34 GHz")
+            case .iPhone8,
+                 .iPhone8Plus,
+                 .iPhoneX:
+                return ("A11 Bionic", "2.39 GHz")
+            case .iPhoneXS,
+                 .iPhoneXS_Max,
+                 .iPhoneXR:
+                return ("A12 Bionic", "2.5 GHz")
+            case .iPhone11,
+                 .iPhone11Pro,
+                 .iPhone11Pro_Max:
+                return ("A13 Bionic", "2.65 GHz")
+            case .iPad2:
+                return ("A5", "1.0 GHz")
+            case .iPad3:
+                return ("A5X", "1.0 GHz")
+            case .iPad4:
+                return ("A6X", "1.4 GHz")
+            case .iPad5:
+                return ("A9", "1.85 GHz")
+            case .iPad6:
+                return ("A10 Fusion", "2.34 GHz")
+            case .iPadAir:
+                return ("A7", "1.4 GHz")
+            case .iPadAir2:
+                return ("A8X", "1.5 GHz")
+            case .iPadAir3:
+                return ("A12 Bionic", "2. 49 GHz")
+            case .iPadMini:
+                return ("A5", "1.0 GHz")
+            case .iPadMini2,
+                 .iPadMini3:
+                return ("A7", "1.3 GHz")
+            case .iPadMini4:
+                return ("A8", "1.5 GHz")
+            case .iPadPro9_7Inch:
+                return ("A9X", "2.16 GHz")
+            case .iPadPro12_9Inch:
+                return ("A9X", "2.24 GHz")
+            case .iPadPro12_9Inch2,
+                 .iPadPro10_5Inch:
+                return ("A10X Fusion", "2.34 GHz")
+            case .iPadPro11_0Inch,
+                 .iPadPro12_9Inch3:
+                return ("A12Z Bionic", "2.5 GHz")
+             default:
+                return ("N/A", "N/A")
+        }
+    }
 }
