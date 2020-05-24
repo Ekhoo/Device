@@ -13,7 +13,7 @@ public enum Size: Int, Comparable {
     case screen3_5Inch
     /// iPhone 5, 5s, 5c, SE, iPod Touch 5-6th gen.
     case screen4Inch
-    /// iPhone 6, 6s, 7, 8
+    /// iPhone 6, 6s, 7, 8, SE 2nd gen.
     case screen4_7Inch
     /// iPhone 6+, 6s+, 7+, 8+
     case screen5_5Inch
