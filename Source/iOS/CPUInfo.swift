@@ -70,7 +70,7 @@ public struct CPUInfo {
         case mhz2650 = 2650
         
         public var ghz: Float {
-            return Float(rawValue) * 1000
+            return Float(rawValue) / 1000
         }
         
         public var stringValue: String {
