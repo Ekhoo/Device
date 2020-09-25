@@ -6,6 +6,7 @@
 //  Copyright © 2015 Ekhoo. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 open class Device {
@@ -187,3 +188,4 @@ open class Device {
     }
     
 }
+#endif

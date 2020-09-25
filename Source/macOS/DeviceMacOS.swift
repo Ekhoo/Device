@@ -6,6 +6,7 @@
 //  Copyright © 2016 Ekhoo. All rights reserved.
 //
 
+#if os(OSX)
 import Cocoa
 
 public class Device {
@@ -81,3 +82,4 @@ public class Device {
     }
 
 }
+#endif
