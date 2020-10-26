@@ -47,6 +47,10 @@ open class Device {
             case "iPhone12,3":                               return .iPhone11Pro
             case "iPhone12,5":                               return .iPhone11Pro_Max
             case "iPhone12,8":                               return .iPhoneSE2
+            case "iPhone13,1":                               return .iPhone12Mini
+            case "iPhone13,2":                               return .iPhone12
+            case "iPhone13,3":                               return .iPhone12Pro
+            case "iPhone13,4":                               return .iPhone12Pro_Max
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -119,7 +123,7 @@ open class Device {
         let screenHeight: Double = max(w, h)
         
         switch screenHeight {
-            case 240,480:
+            case 240, 480:
                 return .screen3_5Inch
             case 568:
                 return .screen4Inch
@@ -128,17 +132,26 @@ open class Device {
             case 736:
                 return .screen5_5Inch
             case 812:
-                return .screen5_8Inch
+                switch version() {
+                case .iPhone12Mini:
+                    return .screen5_4Inch
+                default:
+                    return .screen5_8Inch
+                }
+            case 844:
+                return .screen6_1Inch
             case 896:
                 switch version() {
-                case .iPhoneXS_Max,.iPhone11Pro_Max:
+                case .iPhoneXS_Max, .iPhone11Pro_Max:
                     return .screen6_5Inch
                 default:
                     return .screen6_1Inch
                 }
+            case 926:
+                return .screen6_7Inch
             case 1024:
                 switch version() {
-                case .iPadMini,.iPadMini2,.iPadMini3,.iPadMini4,.iPadMini5:
+                case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5:
                     return .screen7_9Inch
                 case .iPadPro10_5Inch:
                     return .screen10_5Inch
