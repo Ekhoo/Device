@@ -6,8 +6,7 @@
 //  Copyright © 2016 Ekhoo. All rights reserved.
 //
 
-#if os(macOS)
-
+#if os(OSX)
 import Cocoa
 
 public class Device {
@@ -58,6 +57,8 @@ public class Device {
             return Size.screen13Inch
         case 15:
             return Size.screen15Inch
+        case 16:
+            return Size.screen16Inch
         case 17:
             return Size.screen17Inch
         case 20:
@@ -83,5 +84,4 @@ public class Device {
     }
 
 }
-
 #endif
