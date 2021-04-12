@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Device"
-  s.version      = "3.2.1"
+  s.version      = "3.2.2"
   s.summary      = "Light weight tool for detecting the current device and screen size written in swift."
 
   s.description  = "Swift library for detecting the running device's model and screen size. With the newer  devices, developers have more work to do. This library simplifies their job by allowing them to get information about the running device and easily target the ones they want."
