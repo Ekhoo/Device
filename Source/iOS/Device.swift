@@ -51,6 +51,10 @@ open class Device {
             case "iPhone13,2":                               return .iPhone12
             case "iPhone13,3":                               return .iPhone12Pro
             case "iPhone13,4":                               return .iPhone12Pro_Max
+            case "iPhone14,4":                               return .iPhone13Mini
+            case "iPhone14,5":                               return .iPhone13
+            case "iPhone14,2":                               return .iPhone13Pro
+            case "iPhone14,3":                               return .iPhone13Pro_Max
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -133,7 +137,7 @@ open class Device {
                 return .screen5_5Inch
             case 812:
                 switch version() {
-                case .iPhone12Mini:
+                case .iPhone12Mini, .iPhone13Mini:
                     return .screen5_4Inch
                 default:
                     return .screen5_8Inch
