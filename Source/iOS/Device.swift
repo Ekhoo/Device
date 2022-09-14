@@ -55,6 +55,11 @@ open class Device {
             case "iPhone14,5":                               return .iPhone13
             case "iPhone14,2":                               return .iPhone13Pro
             case "iPhone14,3":                               return .iPhone13Pro_Max
+            case "iPhone14,6":                               return .iPhoneSE3
+            case "iPhone14,7":                               return .iPhone14
+            case "iPhone14,8":                               return .iPhone14Plus
+            case "iPhone15,2":                               return .iPhone14Pro
+            case "iPhone15,3":                               return .iPhone14ProMax
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -144,6 +149,8 @@ open class Device {
                 }
             case 844:
                 return .screen6_1Inch
+            case 852:
+              return .screen6_1Inch
             case 896:
                 switch version() {
                 case .iPhoneXS_Max, .iPhone11Pro_Max:
@@ -152,6 +159,8 @@ open class Device {
                     return .screen6_1Inch
                 }
             case 926:
+                return .screen6_7Inch
+            case 932:
                 return .screen6_7Inch
             case 1024:
                 switch version() {
