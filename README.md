@@ -5,6 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Device.svg?style=flat)](http://cocoapods.org/pods/Device)
 ![](https://img.shields.io/badge/Supported-iOS8%20%7C%20OSX%2010.10-4BC51D.svg?style=flat-square)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 ![](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)
 [![Twitter](https://img.shields.io/badge/Twitter-@LucasEkhoo-blue.svg?style=flat)](http://twitter.com/LucasEkhoo)
 
@@ -16,7 +17,7 @@ Device is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Device", '~> 3.2.1'
+pod "Device", '~> 3.3.0'
 ```
 
 ## Carthage
@@ -33,7 +34,7 @@ $ brew install carthage
 To integrate Device into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ekhoo/Device" ~> 3.2.1
+github "Ekhoo/Device" ~> 3.3.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
