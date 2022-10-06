@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         /*** Display the device version ***/
-        switch Device.version() {
+        switch Device.versionOnSimulator() {
             /*** iPhone ***/
             case .iPhone4:       print("It's an iPhone 4")
             case .iPhone4S:      print("It's an iPhone 4S")
