@@ -120,6 +120,88 @@ open class Device {
             return .unknown
         }
     }
+
+    static public func cpuInfo() -> CPUInfo {
+        switch version() {
+            // iPod
+            case .iPodTouch4Gen:
+                return .a4_800mhz
+            case .iPodTouch5Gen:
+                return .a5_800mhz
+            case .iPodTouch6Gen:
+                return .a8_1100mhz
+            
+            // iPhone
+            case .iPhone4:
+                return .a4_800mhz
+            case .iPhone4S:
+                return .a5_800mhz
+            case .iPhone5,
+                 .iPhone5C:
+                return .a6_1300mhz
+            case .iPhone5S:
+                return .a7_1300mhz
+            case .iPhone6,
+                 .iPhone6Plus:
+                return .a8_1400mhz
+            case .iPhone6S,
+                 .iPhone6SPlus,
+                 .iPhoneSE:
+                return .a9_1850mhz
+            case .iPhone7,
+                 .iPhone7Plus:
+                return .a10_2340mhz
+            case .iPhone8,
+                 .iPhone8Plus,
+                 .iPhoneX:
+                return .a11_2390mhz
+            case .iPhoneXS,
+                 .iPhoneXS_Max,
+                 .iPhoneXR:
+                return .a12_2490mhz
+            case .iPhone11,
+                 .iPhone11Pro,
+                 .iPhone11Pro_Max:
+                return .a13_2650mhz
+            
+            // iPad
+            case .iPad2:
+                return .a5x_1000mhz
+            case .iPad3:
+                return .a5x_1000mhz
+            case .iPad4:
+                return .a6x_1400mhz
+            case .iPad5:
+                return .a9_1850mhz
+            case .iPad6:
+                return .a10_2340mhz
+            case .iPadAir:
+                return .a7_1400mhz
+            case .iPadAir2:
+                return .a8x_1500mhz
+            case .iPadAir3:
+                return .a12_2490mhz
+            case .iPadMini:
+                return .a5x_1000mhz
+            case .iPadMini2,
+                 .iPadMini3:
+                return .a7_1300mhz
+            case .iPadMini4:
+                return .a8x_1500mhz
+            case .iPadPro9_7Inch:
+                return .a9x_2160mhz
+            case .iPadPro12_9Inch:
+                return .a9x_2240mhz
+            case .iPadPro12_9Inch2,
+                 .iPadPro10_5Inch:
+                return .a10x_2340mhz
+            case .iPadPro11_0Inch,
+                 .iPadPro12_9Inch3:
+                return .a12z_2500mhz
+             default:
+                return .na
+        }
+    }
     
     static public func version() -> Version {
         return getVersion(code: getVersionCode())

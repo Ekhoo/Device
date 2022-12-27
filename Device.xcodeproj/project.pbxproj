@@ -13,6 +13,7 @@
 		006E76C41C3C09DE00656720 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF0F1BE4001A00816835 /* Version.swift */; };
 		006E76C51C3C09DE00656720 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF111BE4002800816835 /* Size.swift */; };
 		006E76C61C3C09DE00656720 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8F0391C176DB7006B19D2 /* Type.swift */; };
+		2392B095247F48D0000E4821 /* CPUInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392B094247F48D0000E4821 /* CPUInfo.swift */; };
 		BE11EF011BE3FD9200816835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EEFC1BE3FD9200816835 /* AppDelegate.swift */; };
 		BE11EF021BE3FD9200816835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE11EEFD1BE3FD9200816835 /* Assets.xcassets */; };
 		BE11EF051BE3FD9200816835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11EF001BE3FD9200816835 /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		001C44691C3C08C000F6599D /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C446C1C3C08C000F6599D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001C446D1C3C08C000F6599D /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		2392B094247F48D0000E4821 /* CPUInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUInfo.swift; sourceTree = "<group>"; };
 		BE11EEE71BE3FC0300816835 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE11EEFC1BE3FD9200816835 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		BE11EEFD1BE3FD9200816835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -205,6 +207,7 @@
 		E2C023B51D6331A00033AD25 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2392B094247F48D0000E4821 /* CPUInfo.swift */,
 				E2C023B61D6331A00033AD25 /* Device.swift */,
 			);
 			path = iOS;
@@ -416,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2392B095247F48D0000E4821 /* CPUInfo.swift in Sources */,
 				006E76C41C3C09DE00656720 /* Version.swift in Sources */,
 				006E76C51C3C09DE00656720 /* Size.swift in Sources */,
 				006E76C61C3C09DE00656720 /* Type.swift in Sources */,
