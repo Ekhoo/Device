@@ -13,12 +13,12 @@ open class Device {
     static fileprivate func getVersionCode() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
-        
+
         let versionCode: String = String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
-        
+
         return versionCode
     }
-    
+
     static fileprivate func getVersion(code: String) -> Version {
         switch code {
             /*** iPhone ***/
@@ -55,6 +55,10 @@ open class Device {
             case "iPhone14,5":                               return .iPhone13
             case "iPhone14,2":                               return .iPhone13Pro
             case "iPhone14,3":                               return .iPhone13Pro_Max
+		    case "iPhone14,7":								 return .iPhone14
+            case "iPhone14,8":                               return .iPhone14Plus
+            case "iPhone15,2":                               return .iPhone14Pro
+            case "iPhone15,3":                               return .iPhone14Pro_Max
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -104,10 +108,10 @@ open class Device {
             default:                                         return .unknown
         }
     }
-    
+
     static fileprivate func getType(code: String) -> Type {
         let versionCode = getVersionCode()
-        
+
         if versionCode.contains("iPhone") {
             return .iPhone
         } else if versionCode.contains("iPad") {
@@ -120,16 +124,16 @@ open class Device {
             return .unknown
         }
     }
-    
+
     static public func version() -> Version {
         return getVersion(code: getVersionCode())
     }
-    
+
     static public func size() -> Size {
         let w: Double = Double(UIScreen.main.bounds.width)
         let h: Double = Double(UIScreen.main.bounds.height)
         let screenHeight: Double = max(w, h)
-        
+
         switch screenHeight {
             case 240, 480:
                 return .screen3_5Inch
@@ -148,6 +152,8 @@ open class Device {
                 }
             case 844:
                 return .screen6_1Inch
+            case 852:
+                return .screen6_1Inch_2
             case 896:
                 switch version() {
                 case .iPhoneXS_Max, .iPhone11Pro_Max:
@@ -157,6 +163,8 @@ open class Device {
                 }
             case 926:
                 return .screen6_7Inch
+            case 932:
+                return .screen6_7Inch_2
             case 1024:
                 switch version() {
                 case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5:
@@ -180,7 +188,7 @@ open class Device {
                 return .unknownSize
         }
     }
-    
+
     static public func type() -> Type {
         return getType(code: getVersionCode())
     }
@@ -199,7 +207,7 @@ open class Device {
     static public func isSmallerThanScreenSize(_ size: Size) -> Bool {
         return size.rawValue > self.size().rawValue ? true : false;
     }
-    
+
     static public func isRetina() -> Bool {
         return UIScreen.main.scale > 1.0
     }
@@ -207,18 +215,18 @@ open class Device {
     static public func isPad() -> Bool {
         return type() == .iPad
     }
-    
+
     static public func isPhone() -> Bool {
         return type() == .iPhone
     }
-    
+
     static public func isPod() -> Bool {
         return type() == .iPod
     }
-    
+
     static public func isSimulator() -> Bool {
         return type() == .simulator
     }
-    
+
 }
 #endif
