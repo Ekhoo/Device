@@ -220,8 +220,31 @@ open class Device {
         return type() == .iPad
     }
 
+    static public func isFullScreenPad() -> Bool {
+        return isPad() &&
+        [
+            // iPad
+            .iPad10, .iPadAir4, .iPadAir5, .iPadMini6,
+            // iPad Pro 11
+            .iPadPro11_0Inch, .iPadPro11_0Inch2, .iPadPro11_0Inch3, .iPadPro11_0Inch4,
+            // iPad Pro 12.9
+            .iPadPro12_9Inch3, .iPadPro12_9Inch4, .iPadPro12_9Inch5, .iPadPro12_9Inch6,
+        ].contains(version())
+    }
+
     static public func isPhone() -> Bool {
         return type() == .iPhone
+    }
+
+    static public func isFullScreenPhone() -> Bool {
+        return type() == .iPhone &&
+        [
+            .iPhoneX, .iPhoneXS, .iPhone11Pro, .iPhoneXS_Max, .iPhone11Pro_Max,
+            .iPhoneXR, .iPhone11,
+            .iPhone12Mini, .iPhone13Mini,
+            .iPhone12, .iPhone12Pro, .iPhone12Pro_Max, .iPhone13, .iPhone13Pro, .iPhone13Pro_Max, .iPhone14, .iPhone14Plus,
+            .iPhone14Pro, .iPhone14Pro_Max,
+        ].contains(version())
     }
 
     static public func isPod() -> Bool {
@@ -386,6 +409,38 @@ extension Device {
             return false
         case .unknown:
             return false
+		}
+	}
+}
+
+// MARK: - Status Bar
+extension Device {
+    static public func statusBarHeight() -> CGFloat {
+        if isPod() {
+            return 20
+        }
+        if isPad() {
+            return isFullScreenPad() ? 24 : 20
+        }
+        switch version() {
+        case .iPhone2G, .iPhone3G, .iPhone3GS, .iPhone4, .iPhone4S, .iPhone5, .iPhone5C, .iPhone5S, .iPhone6, .iPhone6Plus, .iPhone6S, .iPhone6SPlus, .iPhoneSE, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneSE2:
+            return 20
+        case .iPhoneX, .iPhoneXS, .iPhone11Pro, .iPhoneXS_Max, .iPhone11Pro_Max:
+            return 44
+        case .iPhoneXR, .iPhone11:
+            return 48
+        case .iPhone12Mini, .iPhone13Mini:
+            return 50
+        case .iPhone12, .iPhone12Pro, .iPhone12Pro_Max, .iPhone13, .iPhone13Pro, .iPhone13Pro_Max, .iPhone14, .iPhone14Plus:
+            return 47
+        case .iPhone14Pro, .iPhone14Pro_Max:
+            return 54
+        case .simulator:
+            return 0
+        case .unknown:
+            return 0
+        default:
+            fatalError()
         }
     }
 }
