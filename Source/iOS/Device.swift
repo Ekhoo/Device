@@ -55,7 +55,7 @@ open class Device {
             case "iPhone14,5":                               return .iPhone13
             case "iPhone14,2":                               return .iPhone13Pro
             case "iPhone14,3":                               return .iPhone13Pro_Max
-		    case "iPhone14,7":								 return .iPhone14
+            case "iPhone14,7":                               return .iPhone14
             case "iPhone14,8":                               return .iPhone14Plus
             case "iPhone15,2":                               return .iPhone14Pro
             case "iPhone15,3":                               return .iPhone14Pro_Max
@@ -70,10 +70,12 @@ open class Device {
             case "iPad7,11", "iPad7,12":                     return .iPad7
             case "iPad11,6", "iPad11,7":                     return .iPad8
             case "iPad12,1", "iPad12,2":                     return .iPad9
+            case "iPad13,18", "iPad13,19":                   return .iPad10
             case "iPad4,1", "iPad4,2", "iPad4,3":            return .iPadAir
             case "iPad5,3", "iPad5,4":                       return .iPadAir2
             case "iPad11,3", "iPad11,4":                     return .iPadAir3
             case "iPad13,1", "iPad13,2":                     return .iPadAir4
+            case "iPad13,16", "iPad13,17":                   return .iPadAir5
             case "iPad2,5", "iPad2,6", "iPad2,7":            return .iPadMini
             case "iPad4,4", "iPad4,5", "iPad4,6":            return .iPadMini2
             case "iPad4,7", "iPad4,8", "iPad4,9":            return .iPadMini3
@@ -92,6 +94,8 @@ open class Device {
             case "iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7": return .iPadPro11_0Inch3
             case "iPad8,11", "iPad8,12":                     return .iPadPro12_9Inch4
             case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return .iPadPro12_9Inch5
+            case "iPad14,3", "iPad14,4":                     return .iPadPro11_0Inch4
+            case "iPad14,5", "iPad14,6":                     return .iPadPro12_9Inch6
 
             /*** iPod ***/
             case "iPod1,1":                                  return .iPodTouch1Gen
