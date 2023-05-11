@@ -384,6 +384,14 @@ extension Device {
             return false
         case .simulator:
             return false
+        case .iPad10:
+            return false
+        case .iPadAir5:
+            return false
+        case .iPadPro11_0Inch4:
+            return false
+        case .iPadPro12_9Inch6:
+            return false
         case .unknown:
             return false
         }
