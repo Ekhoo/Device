@@ -249,7 +249,7 @@ Lucas Ortis:
 
 # Maintenance
 Pran Kishore:
-- kishorepran@gmail.com.com
+- kishorepran@gmail.com
 - [LinkedIn](https://www.linkedin.com/in/pran-kishore/)
 
 # License
