@@ -55,6 +55,7 @@ open class Device {
             case "iPhone14,5":                               return .iPhone13
             case "iPhone14,2":                               return .iPhone13Pro
             case "iPhone14,3":                               return .iPhone13Pro_Max
+            case "iPhone14,6":                               return .iPhoneSE3
             case "iPhone14,7":                               return .iPhone14
             case "iPhone14,8":                               return .iPhone14Plus
             case "iPhone15,2":                               return .iPhone14Pro
@@ -314,6 +315,8 @@ extension Device {
         case .iPhone13Pro:
             return false
         case .iPhone13Pro_Max:
+            return false
+        case .iPhoneSE3:
             return false
         case .iPhone14:
             return false
