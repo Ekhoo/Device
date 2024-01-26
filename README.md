@@ -241,6 +241,9 @@ func myFunc() {
 
 [![YouTube](https://user-images.githubusercontent.com/2488011/53433240-ba33a780-39fc-11e9-820b-9e1017adce18.png)](https://www.youtube.com/watch?v=cTZcOaGgD-E)
 
+## Privacy
+Device does not collect any data. We provide this notice to help you fill out [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/). Since Device is not using any of privacy required reason API as listed by Apple [here](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api) xcprivacy manifest is not needed for this SDK.
+
 # Author
 Lucas Ortis:
 - me@lucas-ortis.com
