@@ -112,7 +112,7 @@ open class Device {
             case "iPod9,1":                                  return .iPodTouch7Gen
 
             /*** Simulator ***/
-            case "i386", "x86_64":                           return .simulator
+            case "i386", "x86_64", "arm64":                  return .simulator
 
             default:                                         return .unknown
         }
@@ -127,7 +127,7 @@ open class Device {
             return .iPad
         } else if versionCode.contains("iPod") {
             return .iPod
-        } else if versionCode == "i386" || versionCode == "x86_64" {
+        } else if versionCode == "i386" || versionCode == "x86_64" || versionCode == "arm64" {
             return .simulator
         } else {
             return .unknown
