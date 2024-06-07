@@ -45,6 +45,8 @@ public enum Size: Int, Comparable {
     case screen11Inch
     /// iPad Pro (12.9-inch)
     case screen12_9Inch
+    /// iPad Pro (13-inch)
+    case screen13Inch
     #elseif os(OSX)
     case screen11Inch
     case screen12Inch
