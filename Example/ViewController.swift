@@ -80,7 +80,9 @@ class ViewController: UIViewController {
             case .screen7_9Inch:  print("It's a 7.9 inch screen")
             case .screen9_7Inch:  print("It's a 9.7 inch screen")
             case .screen10_5Inch: print("It's a 10.5 inch screen")
+            case .screen11Inch:   print("It's an 11 inch screen")
             case .screen12_9Inch: print("It's a 12.9 inch screen")
+            case .screen13Inch:   print("It's a 13 inch screen")
             default:              print("Unknown size")
         }
         

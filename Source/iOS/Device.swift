@@ -101,6 +101,8 @@ open class Device {
             case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return .iPadPro12_9Inch5
             case "iPad14,3", "iPad14,4":                     return .iPadPro11_0Inch4
             case "iPad14,5", "iPad14,6":                     return .iPadPro12_9Inch6
+            case "iPad14,10", "iPad14,11":                   return .iPadPro13InchM2
+            case "iPad16,5", "iPad16,6":                     return .iPadPro13InchM4
 
             /*** iPod ***/
             case "iPod1,1":                                  return .iPodTouch1Gen
@@ -189,10 +191,12 @@ open class Device {
                 return .screen10_5Inch
             case 1180:
                 return .screen10_9Inch
-            case 1194:
+            case 1194, 1210:
                 return .screen11Inch
             case 1366:
                 return .screen12_9Inch
+            case 1376:
+                return .screen13Inch
             default:
                 return .unknownSize
         }
