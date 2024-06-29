@@ -10,11 +10,20 @@
 import UIKit
 
 open class Device {
-    static fileprivate func getVersionCode() -> String {
+    /// Get Version Code of the device.
+    /// - Parameter detectSimulator: if true, reture the Version Code like real device. Otherwise return Simulator.
+    /// - Returns: Version Code
+    static fileprivate func getVersionCode(detectSimulator: Bool = false) -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
 
         let versionCode: String = String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
+
+#if targetEnvironment(simulator)
+        if detectSimulator {
+            return ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"]!
+        }
+#endif
 
         return versionCode
     }
@@ -136,8 +145,8 @@ open class Device {
         }
     }
 
-    static public func version() -> Version {
-        return getVersion(code: getVersionCode())
+    static public func version(detectSimulator: Bool = false) -> Version {
+        return getVersion(code: getVersionCode(detectSimulator: detectSimulator))
     }
 
     static public func size() -> Size {
@@ -202,8 +211,8 @@ open class Device {
         }
     }
 
-    static public func type() -> Type {
-        return getType(code: getVersionCode())
+    static public func type(detectSimulator: Bool = false) -> Type {
+        return getType(code: getVersionCode(detectSimulator: detectSimulator))
     }
 
     @available(*, deprecated, message: "use == operator instead")
@@ -225,15 +234,38 @@ open class Device {
         return UIScreen.main.scale > 1.0
     }
 
-    static public func isPad() -> Bool {
-        return type() == .iPad
+    static public func isPad(detectSimulator: Bool = true) -> Bool {
+        return type(detectSimulator: detectSimulator) == .iPad
     }
 
-    static public func isPhone() -> Bool {
-        return type() == .iPhone
+    static public func isFullScreenPad(detectSimulator: Bool = true) -> Bool {
+        return isPad(detectSimulator: detectSimulator) &&
+        [
+            // iPad
+            .iPad10, .iPadAir4, .iPadAir5, .iPadMini6,
+            // iPad Pro 11
+            .iPadPro11_0Inch, .iPadPro11_0Inch2, .iPadPro11_0Inch3, .iPadPro11_0Inch4,
+            // iPad Pro 12.9
+            .iPadPro12_9Inch3, .iPadPro12_9Inch4, .iPadPro12_9Inch5, .iPadPro12_9Inch6,
+        ].contains(version(detectSimulator: detectSimulator))
     }
 
-    static public func isPod() -> Bool {
+    static public func isPhone(detectSimulator: Bool = true) -> Bool {
+        return type(detectSimulator: detectSimulator) == .iPhone
+    }
+
+    static public func isFullScreenPhone(detectSimulator: Bool = true) -> Bool {
+        return type(detectSimulator: detectSimulator) == .iPhone &&
+        [
+            .iPhoneX, .iPhoneXS, .iPhone11Pro, .iPhoneXS_Max, .iPhone11Pro_Max,
+            .iPhoneXR, .iPhone11,
+            .iPhone12Mini, .iPhone13Mini,
+            .iPhone12, .iPhone12Pro, .iPhone12Pro_Max, .iPhone13, .iPhone13Pro, .iPhone13Pro_Max, .iPhone14, .iPhone14Plus,
+            .iPhone14Pro, .iPhone14Pro_Max,
+        ].contains(version(detectSimulator: detectSimulator))
+    }
+
+    static public func isPod(detectSimulator: Bool = true) -> Bool {
         return type() == .iPod
     }
 
@@ -241,6 +273,9 @@ open class Device {
         return type() == .simulator
     }
 
+    static public func isFullScreen(detectSimulator: Bool = true) -> Bool {
+        return isFullScreenPad(detectSimulator: detectSimulator) || isFullScreenPhone(detectSimulator: detectSimulator)
+    }
 }
 
 // MARK: - Dynamic island
@@ -256,6 +291,39 @@ extension Device {
             return true
         default:
             return false
+		}
+	}
+}
+
+// MARK: - Status Bar
+extension Device {
+    static public func statusBarHeight() -> CGFloat {
+        if isPod() {
+            return 20
+        }
+        if isPad() {
+            return isFullScreenPad() ? 24 : 20
+        }
+        switch version(detectSimulator: true) {
+        case .iPhone2G, .iPhone3G, .iPhone3GS, .iPhone4, .iPhone4S, .iPhone5, .iPhone5C, .iPhone5S, .iPhone6, .iPhone6Plus, .iPhone6S, .iPhone6SPlus, .iPhoneSE, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneSE2:
+            return 20
+        case .iPhoneX, .iPhoneXS, .iPhone11Pro, .iPhoneXS_Max, .iPhone11Pro_Max:
+            return 44
+        case .iPhoneXR, .iPhone11:
+            return 48
+        case .iPhone12Mini, .iPhone13Mini:
+            return 50
+        case .iPhone12, .iPhone12Pro, .iPhone12Pro_Max, .iPhone13, .iPhone13Pro, .iPhone13Pro_Max, .iPhone14, .iPhone14Plus:
+            return 47
+        case .iPhone14Pro, .iPhone14Pro_Max:
+            return 54
+        case .simulator:
+            assertionFailure()
+            return 0
+        case .unknown:
+            return 0
+        default:
+            fatalError()
         }
     }
 }
