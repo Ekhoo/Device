@@ -260,4 +260,34 @@ extension Device {
     }
 }
 
+// MARK: - homeButton
+extension Device {
+    static public var hasHomeButton: Bool {
+        switch version() {
+        // list of every iphone that has a homebutton
+            case .iPhone2G,
+             .iPhone3G,
+             .iPhone3GS,
+             .iPhone4,
+             .iPhone4S,
+             .iPhone5,
+             .iPhone5C,
+             .iPhone5S,
+             .iPhone6,
+             .iPhone6Plus,
+             .iPhone6S,
+             .iPhone6SPlus,
+             .iPhoneSE,
+             .iPhone7,
+             .iPhone7Plus,
+             .iPhone8,
+             .iPhone8Plus,
+             .iPhoneSE2:
+            return true
+        default:
+            return false
+        }
+    }
+}
+
 #endif
