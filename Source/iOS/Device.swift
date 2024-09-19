@@ -64,6 +64,10 @@ open class Device {
             case "iPhone15,5":                               return .iPhone15Plus
             case "iPhone16,1":                               return .iPhone15Pro
             case "iPhone16,2":                               return .iPhone15Pro_Max
+            case "iPhone17,3":                               return .iPhone16
+            case "iPhone17,4":                               return .iPhone16Plus
+            case "iPhone17,1":                               return .iPhone16Pro
+            case "iPhone17,2":                               return .iPhone16Pro_Max
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -116,7 +120,9 @@ open class Device {
             /*** Simulator ***/
             case "i386", "x86_64":                           return .simulator
 
-            default:                                         return .unknown
+            default:
+                assertionFailure("New Device Found! Model Code:\(code). Please create a PR to the repo.")
+                return .unknown
         }
     }
 
@@ -165,6 +171,8 @@ open class Device {
                 return .screen6_1Inch
             case 852:
                 return .screen6_1Inch_2
+            case 874:
+                return .screen6_3Inch
             case 896:
                 switch version() {
                 case .iPhoneXS_Max, .iPhone11Pro_Max:
@@ -176,6 +184,8 @@ open class Device {
                 return .screen6_7Inch
             case 932:
                 return .screen6_7Inch_2
+            case 956:
+                return .screen6_9Inch
             case 1024:
                 switch version() {
                 case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5:
@@ -252,7 +262,11 @@ extension Device {
                 .iPhone15,
                 .iPhone15Plus,
                 .iPhone15Pro,
-                .iPhone15Pro_Max:
+                .iPhone15Pro_Max,
+                .iPhone16,
+                .iPhone16Plus,
+                .iPhone16Pro,
+                .iPhone16Pro_Max:
             return true
         default:
             return false
