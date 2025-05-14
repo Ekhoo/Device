@@ -68,6 +68,7 @@ open class Device {
             case "iPhone17,4":                               return .iPhone16Plus
             case "iPhone17,1":                               return .iPhone16Pro
             case "iPhone17,2":                               return .iPhone16Pro_Max
+            case "iPhone17,5":                               return .iPhone16e
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -91,6 +92,7 @@ open class Device {
             case "iPad5,1", "iPad5,2":                       return .iPadMini4
             case "iPad11,1", "iPad11,2":                     return .iPadMini5
             case "iPad14,1", "iPad14,2":                     return .iPadMini6
+            case "iPad16,1", "iPad16,2":                     return .iPadMini7
             case "iPad14,8", "iPad14,9":                     return .iPadAirM2_11Inch
             case "iPad14,10", "iPad14,11":                   return .iPadAirM2_13Inch
 
@@ -201,6 +203,8 @@ open class Device {
                 return .screen10_2Inch
             case 1112:
                 return .screen10_5Inch
+            case 1133:
+                return .screen8_3Inch
             case 1180:
                 return .screen10_9Inch
             case 1194, 1210:
