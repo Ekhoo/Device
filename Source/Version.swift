@@ -67,6 +67,7 @@ public enum Version: String {
     case iPad8
     case iPad9
     case iPad10
+    case iPadA16
     case iPadAir
     case iPadAir2
     case iPadAir3
@@ -81,6 +82,8 @@ public enum Version: String {
     case iPadMini7
     case iPadAirM2_11Inch
     case iPadAirM2_13Inch
+    case iPadAirM3_11Inch
+    case iPadAirM3_13Inch
 
     /*** iPadPro ***/
     case iPadPro9_7Inch
