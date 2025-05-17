@@ -10,7 +10,16 @@
 import UIKit
 
 open class Device {
-    static fileprivate func getVersionCode() -> String {
+    /// Get Version Code of the device.
+    /// - Parameter detectSimulator: if true, reture the Version Code like real device. Otherwise return Simulator.
+    /// - Returns: Version Code
+    static fileprivate func getVersionCode(detectSimulator: Bool = false) -> String {
+#if targetEnvironment(simulator)
+        if detectSimulator {
+            return ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"]!
+        }
+#endif
+
         var systemInfo = utsname()
         uname(&systemInfo)
 
@@ -133,8 +142,8 @@ open class Device {
         }
     }
 
-    static fileprivate func getType(code: String) -> Type {
-        let versionCode = getVersionCode()
+    static fileprivate func getType(code: String, detectSimulator: Bool) -> Type {
+		let versionCode = getVersionCode(detectSimulator: detectSimulator)
 
         if versionCode.contains("iPhone") {
             return .iPhone
@@ -149,8 +158,8 @@ open class Device {
         }
     }
 
-    static public func version() -> Version {
-        return getVersion(code: getVersionCode())
+    static public func version(detectSimulator: Bool = false) -> Version {
+        return getVersion(code: getVersionCode(detectSimulator: detectSimulator))
     }
 
     static public func size() -> Size {
@@ -221,8 +230,8 @@ open class Device {
         }
     }
 
-    static public func type() -> Type {
-        return getType(code: getVersionCode())
+    static public func type(detectSimulator: Bool = false) -> Type {
+        return getType(code: getVersionCode(detectSimulator: detectSimulator), detectSimulator: detectSimulator)
     }
 
     @available(*, deprecated, message: "use == operator instead")
@@ -244,15 +253,11 @@ open class Device {
         return UIScreen.main.scale > 1.0
     }
 
-    static public func isPad() -> Bool {
-        return type() == .iPad
+    static public func isPad(detectSimulator: Bool = true) -> Bool {
+        return type(detectSimulator: detectSimulator) == .iPad
     }
 
-    static public func isPhone() -> Bool {
-        return type() == .iPhone
-    }
-
-    static public func isPod() -> Bool {
+    static public func isPod(detectSimulator: Bool = true) -> Bool {
         return type() == .iPod
     }
 
@@ -265,7 +270,7 @@ open class Device {
 // MARK: - Dynamic island
 extension Device {
     static public var hasDynamicIsland: Bool {
-        switch version() {
+        switch version(detectSimulator: true) {
         case .iPhone14Pro,
                 .iPhone14Pro_Max,
                 .iPhone15,
