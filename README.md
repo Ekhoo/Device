@@ -17,7 +17,7 @@ Device is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Device", '~> 3.7.0'
+pod "Device", '~> 3.8.0'
 ```
 
 ## Carthage
@@ -34,7 +34,7 @@ $ brew install carthage
 To integrate Device into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ekhoo/Device" ~> 3.7.0
+github "Ekhoo/Device" ~> 3.8.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Device.framework` into your Xcode project.
@@ -47,7 +47,7 @@ Once you have your Swift package set up, adding Device as a dependency is as eas
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Ekhoo/Device.git", from: "3.7.0")
+    .package(url: "https://github.com/Ekhoo/Device.git", from: "3.8.0")
 ]
 ```
 
