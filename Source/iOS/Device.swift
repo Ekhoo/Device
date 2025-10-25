@@ -286,7 +286,11 @@ extension Device {
                 .iPhone16,
                 .iPhone16Plus,
                 .iPhone16Pro,
-                .iPhone16Pro_Max:
+                .iPhone16Pro_Max,
+                .iPhone17,
+                .iPhone17Pro,
+                .iPhone17Pro_Max,
+                .iPhoneAir:
             return true
         default:
             return false
