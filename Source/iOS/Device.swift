@@ -83,6 +83,8 @@ open class Device {
             case "iPhone18,3":                               return .iPhone17
             case "iPhone18,4":                               return .iPhoneAir
             case "iPhone18,5":                               return .iPhone17e
+            case "iPhone19,2":                               return .iPhone18Pro
+            case "iPhone19,3":                               return .iPhone18Pro_Max
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -293,7 +295,9 @@ extension Device {
                 .iPhone17,
                 .iPhone17Pro,
                 .iPhone17Pro_Max,
-                .iPhoneAir:
+                .iPhoneAir,
+                .iPhone18Pro,
+                .iPhone18Pro_Max:
             return true
         default:
             return false
