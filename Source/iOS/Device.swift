@@ -85,6 +85,7 @@ open class Device {
             case "iPhone18,5":                               return .iPhone17e
             case "iPhone19,2":                               return .iPhone18Pro
             case "iPhone19,3":                               return .iPhone18Pro_Max
+            case "iPhone19,4":                               return .iPhoneDuo
 
             /*** iPad ***/
             case "iPad1,1", "iPad1,2":                       return .iPad1
@@ -173,9 +174,18 @@ open class Device {
         return getVersion(code: getVersionCode(detectSimulator: detectSimulator))
     }
 
+    /// Bounds of the screen the foreground scene is on.
+    /// `UIScreen.main` is ambiguous on iPhone Duo, which has two displays.
+    static fileprivate func activeScreenBounds() -> CGRect {
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        let scene = scenes.first { $0.activationState == .foregroundActive && $0.session.role == .windowApplication } ?? scenes.first
+        return scene?.screen.bounds ?? UIScreen.main.bounds
+    }
+
     static public func size() -> Size {
-        let w: Double = Double(UIScreen.main.bounds.width)
-        let h: Double = Double(UIScreen.main.bounds.height)
+        let bounds = activeScreenBounds()
+        let w: Double = Double(bounds.width)
+        let h: Double = Double(bounds.height)
         let screenHeight: Double = max(w, h)
 
         switch screenHeight {
@@ -213,6 +223,12 @@ open class Device {
                 return .screen6_7Inch_2
             case 956:
                 return .screen6_9Inch
+            case 678:
+                // iPhone Duo outer display is 466×678 pt. Wider than a 5.4-inch mini, so use a regular phone bucket.
+                return .screen5_4Inch_2
+            case 951:
+                // iPhone Duo inner display is 669×951 pt. Largest existing phone bucket.
+                return .screen7_6Inch
             case 1024:
                 switch version() {
                 case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5:
@@ -237,6 +253,10 @@ open class Device {
             case 1376:
                 return .screen13Inch
             default:
+                // Folding can report a size between the two canvases. Keep Duo out of the unknown/small bucket.
+                if version() == .iPhoneDuo {
+                    return screenHeight >= 678 ? .screen7_6Inch : .screen5_4Inch_2
+                }
                 return .unknownSize
         }
     }

@@ -17,6 +17,8 @@ public enum Size: Int, Comparable {
     case screen4_7Inch
     /// iPhone 12 Mini
     case screen5_4Inch
+    ///iPhone Duo outer display
+    case screen5_4Inch_2
     /// iPhone 6+, 6s+, 7+, 8+
     case screen5_5Inch
     /// iPhone X, Xs, 11 Pro
@@ -35,6 +37,8 @@ public enum Size: Int, Comparable {
     case screen6_7Inch_2
     /// iPhone 16 Pro Max
     case screen6_9Inch
+    /// iPhone Duo inner display
+    case screen7_6Inch
     /// iPad Mini
     case screen7_9Inch
     /// iPad Mini
