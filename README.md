@@ -77,6 +77,36 @@ func myFunc() {
             case .iPhoneXS:      print("It's an iPhone Xs")
             case .iPhoneXS_Max:  print("It's an iPhone Xs Max")
             case .iPhoneXR:      print("It's an iPhone Xr")
+            case .iPhone11:      print("It's an iPhone 11")
+            case .iPhone11Pro:   print("It's an iPhone 11 Pro")
+            case .iPhone11Pro_Max: print("It's an iPhone 11 Pro Max")
+            case .iPhoneSE2:     print("It's an iPhone SE 2nd Gen")
+            case .iPhone12Mini:  print("It's an iPhone 12 Mini")
+            case .iPhone12:      print("It's an iPhone 12")
+            case .iPhone12Pro:   print("It's an iPhone 12 Pro")
+            case .iPhone12Pro_Max: print("It's an iPhone 12 Pro Max")
+            case .iPhone13Mini:  print("It's an iPhone 13 Mini")
+            case .iPhone13:      print("It's an iPhone 13")
+            case .iPhone13Pro:   print("It's an iPhone 13 Pro")
+            case .iPhone13Pro_Max: print("It's an iPhone 13 Pro Max")
+            case .iPhoneSE3:     print("It's an iPhone SE 3rd Gen")
+            case .iPhone14:      print("It's an iPhone 14")
+            case .iPhone14Plus:  print("It's an iPhone 14 Plus")
+            case .iPhone14Pro:   print("It's an iPhone 14 Pro")
+            case .iPhone14Pro_Max: print("It's an iPhone 14 Pro Max")
+            case .iPhone15:      print("It's an iPhone 15")
+            case .iPhone15Plus:  print("It's an iPhone 15 Plus")
+            case .iPhone15Pro:   print("It's an iPhone 15 Pro")
+            case .iPhone15Pro_Max: print("It's an iPhone 15 Pro Max")
+            case .iPhone16:      print("It's an iPhone 16")
+            case .iPhone16Plus:  print("It's an iPhone 16 Plus")
+            case .iPhone16Pro:   print("It's an iPhone 16 Pro")
+            case .iPhone16Pro_Max: print("It's an iPhone 16 Pro Max")
+            case .iPhone16e:     print("It's an iPhone 16e")
+            case .iPhone17, .iPhone17e, .iPhone17Pro, .iPhone17Pro_Max: print("It's an iPhone 17 series")
+            case .iPhoneAir:     print("It's an iPhone Air")
+            case .iPhone18Pro, .iPhone18Pro_Max: print("It's an iPhone 18 Pro series")
+            case .iPhoneDuo:     print("It's an iPhone Duo")
 
             /*** iPad ***/
             case .iPad1:           print("It's an iPad 1")
@@ -85,15 +115,24 @@ func myFunc() {
             case .iPad4:           print("It's an iPad 4")
             case .iPad5:           print("It's an iPad 5")
             case .iPad6:           print("It's an iPad 6")
+            case .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16: print("It's an iPad")
             case .iPadAir:         print("It's an iPad Air")
             case .iPadAir2:        print("It's an iPad Air 2")
+            case .iPadAir3, .iPadAir4, .iPadAir5: print("It's an iPad Air")
+            case .iPadAirM2_11Inch, .iPadAirM2_13Inch: print("It's an iPad Air M2")
+            case .iPadAirM3_11Inch, .iPadAirM3_13Inch: print("It's an iPad Air M3")
+            case .iPadAirM4_11Inch, .iPadAirM4_13Inch: print("It's an iPad Air M4")
             case .iPadMini:        print("It's an iPad Mini")
             case .iPadMini2:       print("It's an iPad Mini 2")
             case .iPadMini3:       print("It's an iPad Mini 3")
             case .iPadMini4:       print("It's an iPad Mini 4")
+            case .iPadMini5, .iPadMini6, .iPadMini7: print("It's an iPad Mini")
             case .iPadPro9_7Inch:  print("It's an iPad Pro 9.7 Inch")
             case .iPadPro10_5Inch: print("It's an iPad Pro 10.5 Inch")
-            case .iPadPro12_9Inch: print("It's an iPad Pro 12.9 Inch")
+            case .iPadPro11_0Inch, .iPadPro11_0Inch2, .iPadPro11_0Inch3, .iPadPro11_0Inch4: print("It's an iPad Pro 11 Inch")
+            case .iPadPro12_9Inch, .iPadPro12_9Inch2, .iPadPro12_9Inch3, .iPadPro12_9Inch4, .iPadPro12_9Inch5, .iPadPro12_9Inch6: print("It's an iPad Pro 12.9 Inch")
+            case .iPadProM4_11Inch, .iPadProM4_13Inch: print("It's an iPad Pro M4")
+            case .iPadProM5_11Inch, .iPadProM5_13Inch: print("It's an iPad Pro M5")
 
             /*** iPod ***/
             case .iPodTouch1Gen: print("It's a iPod touch generation 1")
@@ -117,18 +156,29 @@ func myFunc() {
 func myFunc() {
         /*** Display the device screen size ***/
         switch Device.size() {
-            case .screen3_5Inch:  print("It's a 3.5 inch screen")
-            case .screen4Inch:    print("It's a 4 inch screen")
-            case .screen4_7Inch:  print("It's a 4.7 inch screen")
-            case .screen5_5Inch:  print("It's a 5.5 inch screen")
-            case .screen5_8Inch:  print("It's a 5.8 inch screen")
-            case .screen6_1Inch:  print("It's a 6.1 inch screen")
-            case .screen6_5Inch:  print("It's a 6.8 inch screen")
-            case .screen7_9Inch:  print("It's a 7.9 inch screen")
-            case .screen9_7Inch:  print("It's a 9.7 inch screen")
-            case .screen10_5Inch: print("It's a 10.5 inch screen")
-            case .screen12_9Inch: print("It's a 12.9 inch screen")
-            default:              print("Unknown size")
+            case .screen3_5Inch:    print("It's a 3.5 inch screen")
+            case .screen4Inch:      print("It's a 4 inch screen")
+            case .screen4_7Inch:    print("It's a 4.7 inch screen")
+            case .screen5_4Inch:    print("It's a 5.4 inch screen")
+            case .screen5_5Inch:    print("It's a 5.5 inch screen")
+            case .screen5_8Inch:    print("It's a 5.8 inch screen")
+            case .screen6_1Inch,
+                 .screen6_1Inch_2:  print("It's a 6.1 inch screen")
+            case .screen6_3Inch:    print("It's a 6.3 inch screen")
+            case .screen6_5Inch:    print("It's a 6.5 inch screen")
+            case .screen6_7Inch,
+                 .screen6_7Inch_2:  print("It's a 6.7 inch screen")
+            case .screen6_9Inch:    print("It's a 6.9 inch screen")
+            case .screen7_9Inch:    print("It's a 7.9 inch screen")
+            case .screen8_3Inch:    print("It's an 8.3 inch screen")
+            case .screen9_7Inch:    print("It's a 9.7 inch screen")
+            case .screen10_2Inch:   print("It's a 10.2 inch screen")
+            case .screen10_5Inch:   print("It's a 10.5 inch screen")
+            case .screen10_9Inch:   print("It's a 10.9 inch screen")
+            case .screen11Inch:     print("It's an 11 inch screen")
+            case .screen12_9Inch:   print("It's a 12.9 inch screen")
+            case .screen13Inch:     print("It's a 13 inch screen")
+            default:                print("Unknown size")
         }
 }
 ```
@@ -141,7 +191,7 @@ func myFunc() {
             case .iPod:         print("It's an iPod")
             case .iPhone:       print("It's an iPhone")
             case .iPad:         print("It's an iPad")
-            case .Simulator:    print("It's a Simulated device")
+            case .simulator:    print("It's a Simulated device")
             default:            print("Unknown device type")
         }
 }
@@ -156,7 +206,7 @@ func myFunc() {
         if (Device.isPad()){
             print("It's an iPad")
         }
-        else if (Device.isPhone()){
+        else if (Device.type() == .iPhone){
             print("It's an iPhone")
         }
         else if (Device.isPod()){
@@ -166,7 +216,28 @@ func myFunc() {
             print("It's a Simulated device")
         }
 }
+```
 
+## Dynamic Island
+```swift
+func myFunc() {
+        /*** Check for Dynamic Island ***/
+        if Device.hasDynamicIsland {
+            print("Device has a Dynamic Island")
+        }
+}
+```
+
+## Simulator Hardware Detection
+By default, running on a simulator returns `.simulator`. Pass `detectSimulator: true` to inspect the underlying simulated hardware model (e.g. iPhone 16):
+```swift
+func myFunc() {
+        let simulatedVersion = Device.version(detectSimulator: true)
+        print("Emulated model: \(simulatedVersion)")
+        
+        let simulatedType = Device.type(detectSimulator: true)
+        print("Emulated type: \(simulatedType)")
+}
 ```
 
 ## Mac
