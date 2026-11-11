@@ -177,9 +177,13 @@ open class Device {
     /// Bounds of the screen the foreground scene is on.
     /// `UIScreen.main` is ambiguous on iPhone Duo, which has two displays.
     static fileprivate func activeScreenBounds() -> CGRect {
-        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
-        let scene = scenes.first { $0.activationState == .foregroundActive && $0.session.role == .windowApplication } ?? scenes.first
-        return scene?.screen.bounds ?? UIScreen.main.bounds
+        if #available(iOS 13.0, *) {
+            let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+            let scene = scenes.first { $0.activationState == .foregroundActive && $0.session.role == .windowApplication } ?? scenes.first
+            return scene?.screen.bounds ?? UIScreen.main.bounds
+        } else {
+            return UIScreen.main.bounds
+        }
     }
 
     static public func size() -> Size {
