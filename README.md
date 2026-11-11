@@ -156,18 +156,29 @@ func myFunc() {
 func myFunc() {
         /*** Display the device screen size ***/
         switch Device.size() {
-            case .screen3_5Inch:  print("It's a 3.5 inch screen")
-            case .screen4Inch:    print("It's a 4 inch screen")
-            case .screen4_7Inch:  print("It's a 4.7 inch screen")
-            case .screen5_5Inch:  print("It's a 5.5 inch screen")
-            case .screen5_8Inch:  print("It's a 5.8 inch screen")
-            case .screen6_1Inch:  print("It's a 6.1 inch screen")
-            case .screen6_5Inch:  print("It's a 6.8 inch screen")
-            case .screen7_9Inch:  print("It's a 7.9 inch screen")
-            case .screen9_7Inch:  print("It's a 9.7 inch screen")
-            case .screen10_5Inch: print("It's a 10.5 inch screen")
-            case .screen12_9Inch: print("It's a 12.9 inch screen")
-            default:              print("Unknown size")
+            case .screen3_5Inch:    print("It's a 3.5 inch screen")
+            case .screen4Inch:      print("It's a 4 inch screen")
+            case .screen4_7Inch:    print("It's a 4.7 inch screen")
+            case .screen5_4Inch:    print("It's a 5.4 inch screen")
+            case .screen5_5Inch:    print("It's a 5.5 inch screen")
+            case .screen5_8Inch:    print("It's a 5.8 inch screen")
+            case .screen6_1Inch,
+                 .screen6_1Inch_2:  print("It's a 6.1 inch screen")
+            case .screen6_3Inch:    print("It's a 6.3 inch screen")
+            case .screen6_5Inch:    print("It's a 6.5 inch screen")
+            case .screen6_7Inch,
+                 .screen6_7Inch_2:  print("It's a 6.7 inch screen")
+            case .screen6_9Inch:    print("It's a 6.9 inch screen")
+            case .screen7_9Inch:    print("It's a 7.9 inch screen")
+            case .screen8_3Inch:    print("It's an 8.3 inch screen")
+            case .screen9_7Inch:    print("It's a 9.7 inch screen")
+            case .screen10_2Inch:   print("It's a 10.2 inch screen")
+            case .screen10_5Inch:   print("It's a 10.5 inch screen")
+            case .screen10_9Inch:   print("It's a 10.9 inch screen")
+            case .screen11Inch:     print("It's an 11 inch screen")
+            case .screen12_9Inch:   print("It's a 12.9 inch screen")
+            case .screen13Inch:     print("It's a 13 inch screen")
+            default:                print("Unknown size")
         }
 }
 ```
@@ -180,7 +191,7 @@ func myFunc() {
             case .iPod:         print("It's an iPod")
             case .iPhone:       print("It's an iPhone")
             case .iPad:         print("It's an iPad")
-            case .Simulator:    print("It's a Simulated device")
+            case .simulator:    print("It's a Simulated device")
             default:            print("Unknown device type")
         }
 }
@@ -195,7 +206,7 @@ func myFunc() {
         if (Device.isPad()){
             print("It's an iPad")
         }
-        else if (Device.isPhone()){
+        else if (Device.type() == .iPhone){
             print("It's an iPhone")
         }
         else if (Device.isPod()){
@@ -205,7 +216,28 @@ func myFunc() {
             print("It's a Simulated device")
         }
 }
+```
 
+## Dynamic Island
+```swift
+func myFunc() {
+        /*** Check for Dynamic Island ***/
+        if Device.hasDynamicIsland {
+            print("Device has a Dynamic Island")
+        }
+}
+```
+
+## Simulator Hardware Detection
+By default, running on a simulator returns `.simulator`. Pass `detectSimulator: true` to inspect the underlying simulated hardware model (e.g. iPhone 16):
+```swift
+func myFunc() {
+        let simulatedVersion = Device.version(detectSimulator: true)
+        print("Emulated model: \(simulatedVersion)")
+        
+        let simulatedType = Device.type(detectSimulator: true)
+        print("Emulated type: \(simulatedType)")
+}
 ```
 
 ## Mac
